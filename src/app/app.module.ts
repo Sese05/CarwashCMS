@@ -1,3 +1,5 @@
+import { CarwashlistDetailsPage } from './../pages/carwashlist-details/carwashlist-details';
+import { WelcomePage } from './../pages/welcome/welcome';
 import { Geofence } from '@ionic-native/geofence';
 import { CarwashListPage } from './../pages/carwash-list/carwash-list';
 
@@ -12,34 +14,30 @@ import { NativeGeocoder, NativeGeocoderForwardResult } from '@ionic-native/nativ
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CarwashProvider } from '../providers/carwash/carwash';
-import firebase from 'firebase/app';
-
-
-firebase.initializeApp({
-  apiKey: "AIzaSyAjNdP0-YIlfcWvchezd7_NIGCb7lygvsY",
-  authDomain: "carwashapp-4fa12.firebaseapp.com",
-  databaseURL: "https://carwashapp-4fa12.firebaseio.com",
-  projectId: "carwashapp-4fa12",
-  storageBucket: "carwashapp-4fa12.appspot.com",
-  messagingSenderId: "766383790377"
-});
+  //import firebase from 'firebase/app';
+import * as firebase from 'firebase';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CarwashListPage
+    CarwashListPage,
+    WelcomePage,
+    CarwashlistDetailsPage
   ],
   imports: [
     BrowserModule,
-  
+
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    CarwashListPage
+    CarwashListPage,
+    WelcomePage,
+    CarwashlistDetailsPage
+
   ],
   providers: [
     StatusBar,

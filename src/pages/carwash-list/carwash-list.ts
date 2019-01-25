@@ -1,14 +1,14 @@
-import { HomePage } from './../home/home';
+import { WelcomePage } from './../welcome/welcome';
 import { CarwashProvider } from './../../providers/carwash/carwash';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
+import { Component } from '@angular/core';
+import { NavController,AlertController, DateTime } from 'ionic-angular';
+import { Time } from '@angular/common';
 import {FormControl} from '@angular/forms';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {Geolocation} from '@ionic-native/geolocation';
 import { Geofence } from '@ionic-native/geofence';
 
-@IonicPage()
 @Component({
   selector: 'page-carwash-list',
   templateUrl: 'carwash-list.html',
@@ -27,27 +27,45 @@ export class CarwashListPage {
     satrdayHrsclose:string='';
     sundayHrsOpen:string='';
     sundayHrsClose:string='';
-  
+  entertainmentArea:string='';
+
 
   userForm:FormGroup;
   lat:any;
   lng:any;
+  
 
-   constructor(public navCtrl: NavController,private carwashPro:CarwashProvider,
+  constructor(public navCtrl: NavController,private carwashPro:CarwashProvider,
     public formBuilder: FormBuilder,public alertCtrl:AlertController,private geo:Geolocation,public geofence: Geofence) {
-      
+      this.userForm= this.formBuilder.group({
+    
+        lat:['',Validators.compose([Validators.required,,Validators.pattern('[a-zA-Z ]*')])],
+        lng:['',Validators.compose([Validators.required,,Validators.pattern('[a-zA-Z ]*')])],
+        carwashName:['',Validators.compose([Validators.required,,Validators.pattern('[a-zA-Z ]*')])],
+        entertainmentArea:['',Validators.compose([Validators.required,,Validators.pattern('[a-zA-Z ]*')])],
+        suvDuration:['',Validators.compose([Validators.required,,Validators.pattern('[0-9]*')])],
+        suvCost:['',Validators.compose([Validators.required,,Validators.pattern('[0-9]*')])], 
+        sedanDuration:['',Validators.compose([Validators.required,,Validators.pattern('[0-9]*')])],
+      })
 
       geofence.initialize().then(
         () => console.log('Geofence Plugin Ready'),
         (err) => console.log(err)
       )
+// Form control name with default value and validator
+this.form = formBuilder.group({
+  option: ['', Validators.required]
+});
 
-  }
+
+} // constructor()
+
+submitForm(event): void {
+// Prevent default submit action
+event.preventDefault();
 
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CarwashListPage');
-  }
+}
 
 locate(){
   this.geo.getCurrentPosition().then(pos=>{
@@ -87,7 +105,8 @@ private addGeofence() {
    
 
 }
-   //slide 1 main details
+
+  //slide 1 main details
   createMainDetails(
     //slide1
     carwashName:string,
@@ -101,7 +120,18 @@ private addGeofence() {
     sundayHrsClose:string,
 
   ): void {
-  
+    if (this.carwashName === "" || this.lat === "" || this.lng === "" || this.entertainmentArea===""||this.openHours===""||this.closinghours===""||this.satrdayHrsOpen===""||this.satrdayHrsOpen===""||this.sundayHrsOpen===""||this.sundayHrsClose==="") {
+      const alert = this.alertCtrl.create({
+        title: "Warning",
+        subTitle: "please fill in all fields",
+        buttons: ["OK"]
+        
+      });
+      
+      alert.present();
+      
+    }
+      else {
     this.carwashPro
       .createCarwashDetails(
         //slide1
@@ -114,11 +144,18 @@ private addGeofence() {
         satrdayHrsclose,
         sundayHrsOpen,
         sundayHrsClose,
-  )
+    )
       .then(newCarwashDetails => {
           //goes back to welcome page
-          this.navCtrl.push(HomePage);
+          this.navCtrl.push(WelcomePage);
       });
   }
+}
+ 
+ 
+
+
+ 
+    
 }
 

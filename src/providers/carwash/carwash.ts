@@ -14,13 +14,14 @@ export class CarwashProvider {
 
 
   constructor() {
-    firebase.auth().onAuthStateChanged(users=> {
-      if (users) {
-        this.currentUser=users;
-        this.carWashListRef=firebase.database().ref(`/carwashlists`)
+    this.carWashListRef=firebase.database().ref(`/carwashlists`)
+    // firebase.auth().onAuthStateChanged(users=> {
+    //   if (users) {
+    //     this.currentUser=users;
+    //     this.carWashListRef=firebase.database().ref(`/carwashlists`)
         
-      }
-    });
+    //   }
+    // });
     console.log('Hello CarwashProvider Provider');
   }
 
@@ -58,6 +59,7 @@ export class CarwashProvider {
   }
    //listing function
    getcarwashList(): firebase.database.Reference {
+     console.log("list",this.carWashListRef)
     return this.carWashListRef;
   }
   // receiving an event’s ID and returning that event

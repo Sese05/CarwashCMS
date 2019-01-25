@@ -1,3 +1,84 @@
 page-home {
+    .ion-nav{
+        color: darkblue;
 
+    }
+    .que{
+        background-color:skyblue;
+    }
+    
+
+    .login-content {
+       
+        
+
+        background-color:#F9F8EB;
+        //background-image: url('../../assets/imgs/something.jpg');
+        background-repeat :no-repeat;
+        background-size:cover;
+       }
+
+
+
+       .container{
+        background-color:transparent;
+        border-radius: 0px;
+        margin-top: 0%;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding:0px;
+      box-shadow: none;
+      top:0;
+      bottom:0;
+      left: 0;
+      flex-direction: column;
+      right: 0;
+      position: absolute;
+     
+     }
+
+    //   .items{
+    //    left: 100px;
+    //     bottom: 0;
+    //    top: 0;
+    //     right: 0;
+
+    //  }
+        .item{
+        
+           background-color:transparent;
+    }
+
+    .par{
+        color:black;
+    }
+    #parr{
+        color:white;
+       // rgba(0.0,0.0,0.0,0.3)
+    }
+
+    // .car{
+    //     background-color: #16316B;
+    //     padding:20px;
+
+
+
+    //     border-radius: 10px;
+    //     .card-header{
+    //         font-size: medium;
+    //         color: white
+    //     }
+    //     .icon{
+    //         color: white;
+    //         size: 50px;
+    //     }
+       
+    // }
+    .ent{
+        //background-color:transparent;
+       
+        padding: 0px;
+        border-radius: 10px;
+      
+    }
 }
