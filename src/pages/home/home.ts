@@ -69,6 +69,7 @@ loadmap() {
      alert(err.message);
    });
 
+
   this.getAllCoordinates()
    
   }
