@@ -67,4 +67,7 @@ goToCarwashDetail(carwashId: string):void {
  
    this.navCtrl.push(CarwashlistDetailsPage, {carwashId:carwashId});
 }
+map(){
+  this.navCtrl.push(HomePage);
+}
 }
