@@ -1,0 +1,184 @@
+<ion-header >
+  <ion-navbar color="primary" >
+      
+      <ion-title>
+ Information Form
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="logOut()">
+          <ion-icon name="log-out"></ion-icon>
+        </button>
+      </ion-buttons>
+  
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="que">
+
+        <ion-segment-button value="main">
+            Main Questions
+        </ion-segment-button>
+        <ion-segment-button value="cars">
+            Car wash Questions
+        </ion-segment-button>
+  
+    </ion-segment>
+</ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="login-content">
+
+ 
+     
+<div [ngSwitch]="que">
+
+    <ion-list *ngSwitchCase="'main'">
+
+
+       
+    <ion-card class="ent">
+        <ion-card-content>
+            <ion-item no-lines>
+                <ion-label floating text-wrap>What is the name of the Car Wash?</ion-label>
+                <ion-input type="text"   class="outline" [(ngModel)]="carwashName"></ion-input>
+            </ion-item>
+        </ion-card-content>  
+    </ion-card>   
+
+            
+        <ion-card class="ent">     
+            <ion-card-content >
+                <ion-item no-lines>
+                        <button ion-button  (click)="locate()">Get Current Location</button> 
+                        <p>Latitude : {{lat}}</p>
+                        <p>Longitude : {{lng}}</p>   
+                    <!-- <ion-input type="text" formControlName="location" class="outline" [(ngModel)]="location"></ion-input> -->
+                </ion-item>
+            </ion-card-content>
+        </ion-card>
+
+
+          
+                    
+  <ion-card class="ent">
+
+                                
+          <ion-card-content>
+                  <ion-list no-lines >
+                          <ion-item no-lines>
+          <ion-label text-wrap >What are your operational hours of the Car Wash?</ion-label>
+      </ion-item>
+  
+      <ion-item>
+          <ion-label text-wrap >Open</ion-label>
+              <ion-select   name="d" class="myselect" [(ngModel)]="openHours">
+
+                  <ion-option value="8:00">8:00</ion-option>
+                  <ion-option value="9:00">9:00</ion-option>
+                  <ion-option value="10:00">10:00</ion-option>
+                  <ion-option value="11:00">11:00</ion-option>
+              </ion-select>
+          
+      </ion-item>
+
+      <ion-item>
+
+          <ion-label text-wrap >Close</ion-label>
+              <ion-select  [(ngModel)]="closinghours">
+                  
+                  <ion-option  value="18:00">18:00</ion-option>
+                  <ion-option  value="19:00">19:00</ion-option>
+                  <ion-option  value="20:00">20:00</ion-option>
+                  <ion-option  value="21:00">21:00</ion-option>
+              </ion-select>
+
+      </ion-item>
+  </ion-list>    
+</ion-card-content>
+
+</ion-card>
+
+<ion-card class="ent">
+
+  <ion-card-content >
+          <ion-item no-lines>
+          <ion-label text-wrap>What are your operational hours on weekends?</ion-label>
+          </ion-item>
+  
+          <ion-item >
+          <ion-label text-wrap>Saturday Hours:</ion-label>
+          </ion-item>
+          <ion-item>
+          <ion-label text-wrap >Open</ion-label>
+              <ion-select  name="d" class="myselect" [(ngModel)]="satrdayHrsOpen">
+
+                  <ion-option value="8:00">8:00</ion-option>
+                  <ion-option value="9:00">9:00</ion-option>
+                  <ion-option value="10:00">10:00</ion-option>
+                  <ion-option value="11:00">11:00</ion-option>
+              </ion-select>
+          
+          </ion-item>
+          <ion-item no-lines>
+
+              <ion-label text-wrap >Close</ion-label>
+              <ion-select   [(ngModel)]="satrdayHrsclose">
+                      
+                  <ion-option  value="18:00">18:00</ion-option>
+                  <ion-option  value="19:00">19:00</ion-option>
+                  <ion-option  value="20:00">20:00</ion-option>
+                  <ion-option  value="21:00">21:00</ion-option>
+                  
+              </ion-select>
+
+          </ion-item>
+          <ion-item no-lines>
+          <ion-label text-wrap>Sunday Hours:</ion-label>
+          </ion-item>
+          <ion-item>
+              <ion-label text-wrap >Open</ion-label>
+              <ion-select  name="d" class="myselect" [(ngModel)]="sundayHrsOpen">
+
+                  <ion-option value="8:00">8:00</ion-option>
+                  <ion-option value="9:00">9:00</ion-option>
+                  <ion-option value="10:00">10:00</ion-option>
+                  <ion-option value="11:00">11:00</ion-option>
+              </ion-select>
+              
+          </ion-item>
+          <ion-item>
+
+              <ion-label text-wrap >Close</ion-label>
+                  <ion-select  [(ngModel)]="sundayHrsClose">
+                      
+                      <ion-option  value="18:00">18:00</ion-option>
+                      <ion-option  value="19:00">19:00</ion-option>
+                      <ion-option  value="20:00">20:00</ion-option>
+                      <ion-option  value="21:00">21:00</ion-option>
+                      
+                  </ion-select>
+
+              </ion-item>
+          </ion-card-content>
+        
+        </ion-card>
+
+      
+          
+
+
+
+<button ion-button block  color="twittwer"
+(click)="createMainDetails(carwashName,
+lat,
+ lng,
+openHours,
+closinghours,
+satrdayHrsOpen,
+satrdayHrsclose,
+sundayHrsOpen,
+sundayHrsClose
+)" >add carwash info
+</button>
+</ion-list >
+</div>
+</ion-content>
