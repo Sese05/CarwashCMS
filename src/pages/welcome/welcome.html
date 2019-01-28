@@ -1,54 +1,68 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>Details page</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="logOut()">
-        <ion-icon name="log-out"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+
 </ion-header>
 
 <ion-content class="login-content">
 
   <div class="container">
-
-   
-     <p>Hello world</p> 
-      
+  <div class="row header">
+    <div class="col">
+        <p>
+    <button ion-button clear >SignIn</button>
+    <button ion-button clear >SignUp</button>
+    <button ion-button clear (click)="map()">View maps</button>
+    
+    <button ion-button clear (click)="logOut()">LogOut</button>
+  </p>
+  </div>
+     
+  </div>
     <!-- We are creating an item that will repeat itself for every event we have in our database.
  We are showing necessary event data like the name, the ticket price for guests and the event date.
  
  When users tap on the event, they are going to be taken to the event’s detail page.
  
  We are sending the event id in the goToEventDetail() function so we can pull the specific ID from Firebase. -->
+ 
+  
  <ion-list>
 
-    <ion-list-header>Carwash List</ion-list-header>
+    
 
- <ion-item class="car" *ngFor="let carwash of carwashList" 
- (click)="goToCarwashDetail(carwash.id)" >
-
-      <p>carwashes names</p>
-     {{carwash?.carwashName}}
-   <p>location :</p>
-     <strong>{{carwash?.carwashLongatude}}</strong>
-      <strong>{{carwash?.carwashLatitude}}</strong>
-  <p> weekday opens: :</p>
-   <strong>{{carwash?.weekdayOpen}}</strong>
-  <p> weekday closes: :</p>
-    <strong>{{carwash?.weekdayClose}}</strong>
-
-
-        <button ion-button color="primary" icon-left (click)="editContact(contact)">
-          <ion-icon name="ios-create"></ion-icon>
-          Edit
-        </button>
-
-        <button ion-button color="danger" icon-left (click)="deleteContact(contact)">
-          <ion-icon name="ios-trash"></ion-icon>
-          Delete
-        </button>
+              <ion-item class="car" *ngFor="let carwash of carwashList" >
+              <div class="row header">
+                <div class="col">Carwashes names</div>
+                <div class="col">Location latitude:</div>
+                <div class="col">Location longatude:</div>
+                <div class="col">Weekday opens:</div>
+                <div class="col">Weekday closes:</div>
+                <div class="col"></div>
+                
+              </div>
+              <div class="row" ng-repeat="data in ctrl.data">
+                <div class="col">{{carwash?.carwashName}}</div>
+                <div class="col">{{carwash?.carwashLatitude}}</div>
+                <div class="col">{{carwash?.carwashLongatude}}</div>
+                <div class="col">{{carwash?.weekdayOpen}}</div>
+                <div class="col">{{carwash?.weekdayClose}}</div>
+              
+                <div class="col">
+                    <button ion-button color="primary" icon-left (click)="goToCarwashDetail(carwash.id)">
+                        <ion-icon name="ios-create"></ion-icon>
+                        Edit
+                      </button>
+                <button ion-button color="danger" icon-left (click)="deleteContact(contact)">
+                  <ion-icon name="ios-trash"></ion-icon>
+                  Delete
+                </button>
+                </div>
+              </div>
+           
+      
+            
+       
+                    
+  
 
       </ion-item>
 
