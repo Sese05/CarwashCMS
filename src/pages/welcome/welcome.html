@@ -1,35 +1,35 @@
 <ion-header>
-
+  <div class="row header">
+    <div class="col">
+       
+    <button ion-button clear ><ion-icon name="log-in"></ion-icon>SignIn</button>
+    <button ion-button clear ><ion-icon name="person-add"></ion-icon>SignUp</button>
+    <button ion-button clear (click)="map()"><ion-icon name="globe"></ion-icon>View maps</button>
+    
+    <button ion-button clear (click)="logOut()"><ion-icon name="log-out"></ion-icon>LogOut</button>
+ 
+  </div>
+     
+  </div>
 </ion-header>
 
 <ion-content class="login-content">
 
   <div class="container">
-  <div class="row header">
-    <div class="col">
-        <p>
-    <button ion-button clear >SignIn</button>
-    <button ion-button clear (click)="Signup()">SignUp</button>
-    <button ion-button clear (click)="map()">View maps</button>
-    
-    <button ion-button clear (click)="logOut()">LogOut</button>
-  </p>
-  </div>
-     
-  </div>
+<h1>The car wash list</h1>
     <!-- We are creating an item that will repeat itself for every event we have in our database.
  We are showing necessary event data like the name, the ticket price for guests and the event date.
  
  When users tap on the event, they are going to be taken to the event’s detail page.
  
  We are sending the event id in the goToEventDetail() function so we can pull the specific ID from Firebase. -->
- 
+
   
- <ion-list>
+ <ion-list no-lines>
 
     
 
-              <ion-item class="car" *ngFor="let carwash of carwashList" >
+              <ion-item no-lines class="car" *ngFor="let carwash of carwashList" >
               <div class="row header">
                 <div class="col">Carwashes names</div>
                 <div class="col">Location latitude:</div>
@@ -69,6 +69,8 @@
   </ion-list>
 
 </div>
+
+
 
   
 </ion-content>
