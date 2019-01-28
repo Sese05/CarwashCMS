@@ -17,6 +17,7 @@ import { CarwashProvider } from '../providers/carwash/carwash';
   //import firebase from 'firebase/app';
 import * as firebase from 'firebase';
 import { AuthProvider } from '../providers/auth/auth';
+import { SignupPage } from '../pages/signup/signup';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AuthProvider } from '../providers/auth/auth';
     HomePage,
     CarwashListPage,
     WelcomePage,
-    CarwashlistDetailsPage
+    CarwashlistDetailsPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -37,8 +39,8 @@ import { AuthProvider } from '../providers/auth/auth';
     HomePage,
     CarwashListPage,
     WelcomePage,
-    CarwashlistDetailsPage
-
+    CarwashlistDetailsPage,
+    SignupPage
   ],
   providers: [
     StatusBar,

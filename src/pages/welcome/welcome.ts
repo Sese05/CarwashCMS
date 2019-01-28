@@ -1,3 +1,4 @@
+import { SignupPage } from './../signup/signup';
 import { CarwashlistDetailsPage } from './../carwashlist-details/carwashlist-details';
 import { CarwashProvider } from './../../providers/carwash/carwash';
 import { HomePage } from './../home/home';
@@ -69,5 +70,8 @@ goToCarwashDetail(carwashId: string):void {
 }
 map(){
   this.navCtrl.push(HomePage);
+}
+Signup(){
+  this.navCtrl.push(SignupPage);
 }
 }
