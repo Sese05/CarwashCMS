@@ -16,6 +16,7 @@ import { HomePage } from '../pages/home/home';
 import { CarwashProvider } from '../providers/carwash/carwash';
   //import firebase from 'firebase/app';
 import * as firebase from 'firebase';
+import { AuthProvider } from '../providers/auth/auth';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import * as firebase from 'firebase';
     Geofence,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CarwashProvider,
+    AuthProvider,
   
 
 
