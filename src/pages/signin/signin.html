@@ -1,0 +1,61 @@
+<ion-content no-padding class="content">
+  <div class="container">
+    <div class="name-holder">
+      <div class="logo">
+        
+      </div>
+      <div class="app-name">
+        Data Watch
+          
+      </div>
+    </div>
+  
+
+
+<form [formGroup]="loginForm"  class="form-holder" (submit)="loginUser()" novalidate>
+
+  <ion-item class="items">
+    <ion-label>Email</ion-label>
+    <ion-input formControlName="email" type="email" 
+    [class.invalid]="!loginForm.controls.email.valid && blur">
+  </ion-input>
+
+
+  </ion-item>
+  <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid &&
+   loginForm.controls.email.touched">
+    <p ion-text color="danger">*Please enter a valid email address.</p>
+  </ion-item>
+
+  <ion-item class="items">
+    <ion-label>Password</ion-label>
+    <ion-input formControlName="password" type="password" 
+    [class.invalid]="!loginForm.controls.password.valid && blur">
+  </ion-input>
+  </ion-item>
+
+  
+  <ion-item  class="error-message" *ngIf="!loginForm.controls.password.valid 
+  && loginForm.controls.password.touched">
+    <p  ion-text color="danger">Your password needs more than 6 characters.</p>
+  </ion-item>
+
+  <button ion-button block color="twitter" type="submit" [disabled]="!loginForm.valid">
+    Sign in
+  </button>
+
+
+
+<div  style="text-align:center" padding>
+  <p style="color:#4d606e">Forgot Password🙁?<a style="color:#2f4cac" (click)="goToResetPassword()">Reset</a></p>
+  <p style="color:#4d606e" class="p">Don't have an account?<a style="color:#2f4cac"(click)="goToSignup()">Create new account</a></p>
+  <br>
+
+</div>
+
+
+
+
+</form>
+</div>
+</ion-content>
