@@ -55,8 +55,9 @@ loadmap() {
     this.map.setView([-26.0063121, 28.2108827], 16);
     let markerGroup = leaflet.featureGroup();
     let marker: any = leaflet.marker([-26.0063121, 28.2108827]);
-    marker.bindPopup("<b>I'm here!</b><br>").openPopup();
+    marker.bindPopup("<html>I'm here!</b><html>").openPopup();
     markerGroup.addLayer(marker);
+
     this.map.addLayer(markerGroup);
     var circle = leaflet.circle([-26.0063121, 28.2108827], {
       color: 'green',

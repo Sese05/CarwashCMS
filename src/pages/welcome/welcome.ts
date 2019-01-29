@@ -2,11 +2,13 @@ import { SignupPage } from './../signup/signup';
 import { CarwashlistDetailsPage } from './../carwashlist-details/carwashlist-details';
 import { CarwashProvider } from './../../providers/carwash/carwash';
 import { HomePage } from './../home/home';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component} from '@angular/core';
+import { IonicPage, NavController, NavParams, Item, Toast } from 'ionic-angular';
 import firebase , { User }from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import { WeekDay } from '@angular/common';
+
 
 
 
@@ -19,10 +21,13 @@ export class WelcomePage {
 //declaring list variables
   public carwashList: Array<any>;
 
-
-
+  public carWashListRef: firebase.database.Reference;
+  id:any;
+  database:any;
   constructor(public navCtrl: NavController,private carPro:CarwashProvider,
      public navParams: NavParams) {
+
+      
   
     }
 
@@ -73,5 +78,20 @@ map(){
 }
 Signup(){
   this.navCtrl.push(SignupPage);
+}
+// remove(removeId){
+
+//   this.carWashDeleteRef=firebase.database().ref(`/carwashlists`+ this.id);
+//  this.deleteRecord(removeId);
+// }
+//  deleteRecord(deleteId):Promise<any>{
+//   return this.carWashDeleteRef.remove(deleteId);
+
+//  }
+ remove(no){
+  let carWashListRef= firebase.database().ref('carwashlist/' + this.id);
+  carWashListRef.remove()
+  this.carwashList.splice(no ,1);
+
 }
 }
