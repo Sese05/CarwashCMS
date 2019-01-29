@@ -18,7 +18,7 @@
           <div class="logo">
             
           </div>
-          <div class="app-name">
+          <div  class="app-name">
             Data Watch
               
           </div>
@@ -27,6 +27,7 @@
 
 <form [formGroup]="signupForm"  class="form-holder"  (submit)="signupUser()" novalidate>
  
+  <div class="car">
    
         <ion-label>Username:</ion-label>
         <input type="text" formControlName="username" type="username" 
@@ -71,7 +72,7 @@
 <div>
     <p style="color:#4d606e" class="p"> If you wish to sign in you can click here <a style="color:#2f4cac"(click)="gotosignin()">Sign in</a></p>
 </div>
-
+</div>
 </form>
 </div>
 
