@@ -1,3 +1,5 @@
+import { AuthProvider } from './../../providers/auth/auth';
+import { SigninPage } from './../signin/signin';
 import { SignupPage } from './../signup/signup';
 import { CarwashlistDetailsPage } from './../carwashlist-details/carwashlist-details';
 import { CarwashProvider } from './../../providers/carwash/carwash';
@@ -22,7 +24,7 @@ export class WelcomePage {
 
 
   constructor(public navCtrl: NavController,private carPro:CarwashProvider,
-     public navParams: NavParams) {
+     public navParams: NavParams,public authProvider: AuthProvider,) {
   
     }
 
@@ -73,5 +75,13 @@ map(){
 }
 Signup(){
   this.navCtrl.push(SignupPage);
+}
+Signin(){
+this.navCtrl.push(SigninPage);
+}
+logOut(): void {
+ 
+    this.navCtrl.setRoot(SignupPage);
+
 }
 }
