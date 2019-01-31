@@ -44,7 +44,7 @@ loadmap() {
   this.map = leaflet.map("map").fitWorld();
   leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attributions: 'www.tphangout.com',
-    maxZoom: 14
+    maxZoom: 100
   }).addTo(this.map);
   this.map.locate({
     setView: true,

@@ -1,38 +1,43 @@
-<ion-header>
- 
-</ion-header>
 
+    <ion-header>
+     
+      </ion-header>
+
+<div class="sidenav">
+      
+    <button ion-button clear (click)="Signin()">SignIn</button>
+    <button ion-button clear (click)="Signup()">SignUp</button>
+    <button ion-button clear (click)="map()">View maps</button>
+    <button ion-button clear (click)="logOut()">LogOut</button>
+  </div>
 <ion-content  class="content">
 
-    <div class="sidenav">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#clients">Clients</a>
-        <a href="#contact">Contact</a>
-      </div>
+    <div class="container">
+        <div class="name-holder">
+            <div class="logo">
+              
+            </div>
+            <div style="color:white"  class="app-name">
+              Data Watch
+                
+            </div>
+          </div>
+
+   
       
 
 
-  <div class="container">
-      <div class="name-holder">
-          <div class="logo">
-            
-          </div>
-          <div  class="app-name">
-            Data Watch
-              
-          </div>
-        </div>
+ 
       <h2 align="center">Welcome To Data Watch</h2>  
 
 <form [formGroup]="signupForm"  class="form-holder"  (submit)="signupUser()" novalidate>
  
   <div class="car">
-   
+   <div class="div">
         <ion-label>Username:</ion-label>
-        <input type="text" formControlName="username" type="username" 
+        <input  type="text" formControlName="username" type="username" 
         [class.invalid]="!signupForm.controls.username.valid && blur">
-  
+      
      
       <ion-item class="error-message" *ngIf="!signupForm.controls.username.valid  
       && signupForm.controls.username.touched">
@@ -62,7 +67,7 @@
   signupForm.controls.password.touched">
     <p ion-text color="danger">Your password needs more than 6 characters.</p>
   </ion-item>
-
+</div>
   <div paddig>
   <button  ion-button type="submit" [disabled]="!signupForm.valid">
     Save
@@ -70,7 +75,7 @@
 </div>
 
 <div>
-    <p style="color:#4d606e" class="p"> If you wish to sign in you can click here <a style="color:#2f4cac"(click)="gotosignin()">Sign in</a></p>
+    <p style="color:white" class="p"> If you wish to sign in you can click here <a style="color:#2f4cac"(click)="gotosignin()">Sign in</a></p>
 </div>
 </div>
 </form>

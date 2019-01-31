@@ -2,13 +2,10 @@
   <div class="row header">
     <div class="col">
        
-<<<<<<< HEAD
-    <button ion-button clear >SignIn</button>
+    <button ion-button clear (click)="Signin()">SignIn</button>
     <button ion-button clear (click)="Signup()">SignUp</button>
-=======
-    <button ion-button clear (click)="Signin()"><ion-icon name="log-in"></ion-icon>SignIn</button>
-    <button ion-button clear (click)="Signup()"><ion-icon name="person-add"></ion-icon>SignUp</button>
->>>>>>> 76edf52d6b1894449da213209b167937cb90eb90
+    <button ion-button clear (click)="map()">View maps</button>
+    <button ion-button clear (click)="logOut()">LogOut</button>
    
     
     
@@ -19,15 +16,12 @@
 </ion-header>
 
 <ion-content class="login-content">
-
-    <div class="sidenav">
-        
-        <button ion-button clear (click)="map()">View maps</button>
-        <button ion-button clear (click)="logOut()">LogOut</button>
-        
-      </div>
+  
+ 
 
   <div class="container">
+    
+    
 <h1>The car wash list</h1>
     <!-- We are creating an item that will repeat itself for every event we have in our database.
  We are showing necessary event data like the name, the ticket price for guests and the event date.
@@ -35,7 +29,7 @@
  When users tap on the event, they are going to be taken to the event’s detail page.
  
  We are sending the event id in the goToEventDetail() function so we can pull the specific ID from Firebase. -->
-
+<div class="car">
   
  <ion-list no-lines>
 
@@ -79,7 +73,7 @@
       </ion-item>
 
   </ion-list>
-
+</div>
 </div>
 
 

@@ -1,9 +1,9 @@
 page-signup {
     h2{
-      color: #2f4cac;  
+      color: white;  
   }
   .content{
-  
+      background-image: url('../../assets/imgs/sin.jpg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-color:#d7fbe8;
@@ -12,12 +12,13 @@ page-signup {
       overflow: hidden !important;
   }
   .container{
+      
       align-items: center;
         align-content: center;    
     background-color:transparent;
-    border-radius: 50px;
+    //border-radius: 50px;
     margin-top: 2%;
-    margin-left: 500px;
+    margin-left: 150px;
     margin-right: 0px;
     padding:0px;
   box-shadow: none;
@@ -76,6 +77,10 @@ page-signup {
     background-color: rgba(0.0,0.0,0.0,0.3);
     padding:20px;
     border-radius: 10px;
+    border-style: inset;
+    border-width: 10px;
+    
+  
 }
 
 .app-name {
@@ -137,6 +142,24 @@ font-weight: bolder
     color: #f1f1f1;
   }
   
+
+//   .div{
+//     display: flex;
+//     justify-content:center;
+//     align-content:left;
+//     align-items:center;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     flex-direction: column;
+//     right: 0;
+//     position: absolute;
+//     padding: 10px 15px;
+//     }
+
+
+
+
   
   }
   
