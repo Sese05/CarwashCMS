@@ -5,7 +5,7 @@
         
       </div>
       <div class="app-name">
-        Data Watch
+       <h1 style="color:yellow"> Data Watch</h1>
           
       </div>
     </div>
@@ -14,7 +14,7 @@
 
 <form [formGroup]="loginForm"  class="form-holder" (submit)="loginUser()" novalidate>
 <div class="car" style="text-align:center" padding>
-    <ion-label>Email:</ion-label>
+    <ion-label style="color:yellow">Email:</ion-label>
     <input formControlName="email" type="email" 
     [class.invalid]="!loginForm.controls.email.valid && blur">
   
@@ -27,7 +27,7 @@
   </ion-item>
 
  
-    <ion-label>Password:</ion-label>
+    <ion-label style="color:yellow">Password:</ion-label>
     <input formControlName="password" type="password" 
     [class.invalid]="!loginForm.controls.password.valid && blur">
   
@@ -47,8 +47,8 @@
 
 
 <div  style="text-align:center" padding>
-  <p style="color:#4d606e">Forgot Password🙁?<a style="color:#2f4cac" (click)="goToResetPassword()">Reset</a></p>
-  <p style="color:#4d606e" class="p">Don't have an account?<a style="color:#2f4cac"(click)="goToSignup()">Create new account</a></p>
+  <p style="color:white">Forgot Password?<a style="color:yellow" (click)="goToResetPassword()">Reset</a></p>
+  <p style="color:white" class="p">Don't have an account?<a style="color:yellow"(click)="goToSignup()">Create new account</a></p>
   <br>
 
 </div>
