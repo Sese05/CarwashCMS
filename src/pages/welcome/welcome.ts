@@ -5,7 +5,7 @@ import { CarwashlistDetailsPage } from './../carwashlist-details/carwashlist-det
 import { CarwashProvider } from './../../providers/carwash/carwash';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Alert, AlertController } from 'ionic-angular';
 import firebase , { User }from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
@@ -24,7 +24,7 @@ export class WelcomePage {
 
 
   constructor(public navCtrl: NavController,private carPro:CarwashProvider,
-     public navParams: NavParams,public authProvider: AuthProvider,) {
+     public navParams: NavParams,public authProvider: AuthProvider,public alertCtrl:AlertController) {
   
     }
 
@@ -84,4 +84,23 @@ logOut(): void {
     this.navCtrl.setRoot(SignupPage);
 
 }
+
+deleteInformation(carwashId){
+  const alert:Alert=this.alertCtrl.create({
+    
+    message:"are you sure you want to delete Record?",
+ buttons:[{
+   text:'cancel',
+ },{
+   text:'ok',
+   handler:(data) =>{
+    firebase.database().ref(`/carwashlists/`+carwashId).remove();
+
+     }
+ }]
+})
+alert.present()
+ }
+     
+
 }
