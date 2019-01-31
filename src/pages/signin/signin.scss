@@ -1,21 +1,31 @@
 page-signin {
   .content{
-  
+    background-image: url('../../assets/imgs/sin.jpg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
-      background-color:#d7fbe8;
+      //background-color:#d7fbe8;
   }
   .scroll-content {
       overflow: hidden !important;
   }
+
+  .car{
+    background-color: rgba(0.0,0.0,0.0,0.3);
+    padding:20px;
+    border-radius: 10px;
+    border-style: inset;
+    border-width: 10px;
+    
+  
+}
   .container{
      // align-items: center;
         //align-content: center;    
     background-color:transparent;
     border-radius: 0px;
     margin-top: 4%;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 300px;
+    margin-right: 300px;
     padding:0px;
   box-shadow: none;
   top: 0;

@@ -1,6 +1,6 @@
 page-welcome {
     .login-content {
-        //background-image: url('../../assets/imgs/back.jpg');
+        background-image: url('../../assets/imgs/sin.jpg');
         background-color:#F9F8EB;
 
         // background-image: url('../../assets/imgs/something.jpg');
@@ -9,8 +9,8 @@ page-welcome {
         }
 
         .car{
-            background-color: white;
-            padding:10px; 
+            background-color: rgba(0.0,0.0,0.0,0.3);
+            padding:2px; 
             border-radius: 0px;
        
         }
@@ -45,7 +45,13 @@ page-welcome {
         border-bottom-style: none;
         border-right-style: none;
         text-align: right;
+        
     }
+
+    // .row{
+    //     color: white;
+    // }
+
     h1{
         text-align: center
     }

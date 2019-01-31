@@ -6,9 +6,7 @@
 <div class="sidenav">
       
     <button ion-button clear (click)="Signin()">SignIn</button>
-    <button ion-button clear (click)="Signup()">SignUp</button>
-    <button ion-button clear (click)="map()">View maps</button>
-    <button ion-button clear (click)="logOut()">LogOut</button>
+   
   </div>
 <ion-content  class="content">
 
@@ -33,7 +31,7 @@
 <form [formGroup]="signupForm"  class="form-holder"  (submit)="signupUser()" novalidate>
  
   <div class="car">
-   <div class="div">
+   <div style="text-align:center" padding>
         <ion-label>Username:</ion-label>
         <input  type="text" formControlName="username" type="username" 
         [class.invalid]="!signupForm.controls.username.valid && blur">
@@ -67,16 +65,17 @@
   signupForm.controls.password.touched">
     <p ion-text color="danger">Your password needs more than 6 characters.</p>
   </ion-item>
-</div>
   <div paddig>
-  <button  ion-button type="submit" [disabled]="!signupForm.valid">
-    Save
-  </button>
+      <button  ion-button  type="submit" [disabled]="!signupForm.valid">
+        Save
+      </button>
+    </div>
+    
+    <div>
+        <p style="color:white" class="p"> If you wish to sign in you can click here <a style="color:#2f4cac"(click)="gotosignin()">Sign in</a></p>
+    </div>
 </div>
-
-<div>
-    <p style="color:white" class="p"> If you wish to sign in you can click here <a style="color:#2f4cac"(click)="gotosignin()">Sign in</a></p>
-</div>
+ 
 </div>
 </form>
 </div>

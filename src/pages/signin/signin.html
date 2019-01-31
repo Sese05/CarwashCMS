@@ -13,8 +13,7 @@
 
 
 <form [formGroup]="loginForm"  class="form-holder" (submit)="loginUser()" novalidate>
-
-  
+<div class="car" style="text-align:center" padding>
     <ion-label>Email:</ion-label>
     <input formControlName="email" type="email" 
     [class.invalid]="!loginForm.controls.email.valid && blur">
@@ -54,8 +53,9 @@
 
 </div>
 
-
-
+</div>
+  
+  
 
 </form>
 </div>

@@ -38,19 +38,19 @@
               <ion-item no-lines class="car" *ngFor="let carwash of carwashList" >
               <div class="row header">
                 <div class="col">Carwashes names</div>
-                <div class="col">Location latitude:</div>
-                <div class="col">Location longatude:</div>
+                <div class="col">Loc lat:</div>
+                <div class="col">Loc long:</div>
                 <div class="col">Weekday opens:</div>
                 <div class="col">Weekday closes:</div>
                 <div class="col"></div>
                 
               </div>
               <div class="row" ng-repeat="data in ctrl.data">
-                <div class="col">{{carwash?.carwashName}}</div>
-                <div class="col">{{carwash?.carwashLatitude}}</div>
-                <div class="col">{{carwash?.carwashLongatude}}</div>
-                <div class="col">{{carwash?.weekdayOpen}}</div>
-                <div class="col">{{carwash?.weekdayClose}}</div>
+                <div style="color:white" class="col">{{carwash?.carwashName}}</div>
+                <div style="color:white" class="col">{{carwash?.carwashLatitude}}</div>
+                <div style="color:white" class="col">{{carwash?.carwashLongatude}}</div>
+                <div style="color:white" class="col">{{carwash?.weekdayOpen}}</div>
+                <div style="color:white" class="col">{{carwash?.weekdayClose}}</div>
               
                 <div class="col">
                     <button ion-button color="primary" icon-left (click)="goToCarwashDetail(carwash.id)">
