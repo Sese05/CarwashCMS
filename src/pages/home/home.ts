@@ -1,3 +1,6 @@
+import { WelcomePage } from './../welcome/welcome';
+import { SignupPage } from './../signup/signup';
+import { SigninPage } from './../signin/signin';
 
 import { Geofence } from '@ionic-native/geofence';
 import { CarwashProvider } from './../../providers/carwash/carwash';
@@ -163,6 +166,15 @@ this.populateMap("latitude", "longitude");
        () => console.log('Geofence added'),
        (err) => console.log('Geofence failed to add')
      );
+  }
+  signIn(){
+    this.navCtrl.push(SigninPage)
+  }
+  signUp(){
+    this.navCtrl.push(SignupPage)
+  }
+  logOut(){
+    this.navCtrl.push(SigninPage) 
   }
 }
 
