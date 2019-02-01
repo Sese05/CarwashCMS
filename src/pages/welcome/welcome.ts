@@ -4,8 +4,13 @@ import { SignupPage } from './../signup/signup';
 import { CarwashlistDetailsPage } from './../carwashlist-details/carwashlist-details';
 import { CarwashProvider } from './../../providers/carwash/carwash';
 import { HomePage } from './../home/home';
+<<<<<<< HEAD
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams, Item, Toast } from 'ionic-angular';
+=======
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams, Alert, AlertController } from 'ionic-angular';
+>>>>>>> 116ca60e7317f2463675512c7513a57c59077023
 import firebase , { User }from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
@@ -27,9 +32,13 @@ export class WelcomePage {
   id:any;
   database:any;
   constructor(public navCtrl: NavController,private carPro:CarwashProvider,
+<<<<<<< HEAD
      public navParams: NavParams) {
 
       
+=======
+     public navParams: NavParams,public authProvider: AuthProvider,public alertCtrl:AlertController) {
+>>>>>>> 116ca60e7317f2463675512c7513a57c59077023
   
     }
 
@@ -83,6 +92,7 @@ Signup(){
 }
 // remove(removeId){
 
+<<<<<<< HEAD
 //   this.carWashDeleteRef=firebase.database().ref(`/carwashlists`+ this.id);
 //  this.deleteRecord(removeId);
 // }
@@ -91,4 +101,26 @@ Signup(){
 
 //  }
  
+=======
+}
+
+deleteInformation(carwashId){
+  const alert:Alert=this.alertCtrl.create({
+    
+    message:"are you sure you want to delete Record?",
+ buttons:[{
+   text:'cancel',
+ },{
+   text:'ok',
+   handler:(data) =>{
+    firebase.database().ref(`/carwashlists/`+carwashId).remove();
+
+     }
+ }]
+})
+alert.present()
+ }
+     
+
+>>>>>>> 116ca60e7317f2463675512c7513a57c59077023
 }

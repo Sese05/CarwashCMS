@@ -1,37 +1,41 @@
-<ion-header>
- 
-</ion-header>
 
+    <ion-header>
+     
+      </ion-header>
+
+<div class="sidenav">
+      
+    <button ion-button clear (click)="Signin()">SignIn</button>
+   
+  </div>
 <ion-content  class="content">
 
-    <div class="sidenav">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#clients">Clients</a>
-        <a href="#contact">Contact</a>
-      </div>
+    <div class="container">
+        <div class="name-holder">
+            <div class="logo">
+              
+            </div>
+            <div style="color:yellow"  class="app-name">
+             <h1> Data Watch</h1>
+                
+            </div>
+          </div>
+
+   
       
 
 
-  <div class="container">
-      <div class="name-holder">
-          <div class="logo">
-            
-          </div>
-          <div class="app-name">
-            Data Watch
-              
-          </div>
-        </div>
+ 
       <h2 align="center">Welcome To Data Watch</h2>  
 
 <form [formGroup]="signupForm"  class="form-holder"  (submit)="signupUser()" novalidate>
  
-   
-        <ion-label>Username:</ion-label>
-        <input type="text" formControlName="username" type="username" 
+  <div class="car">
+   <div style="text-align:center" padding>
+        <ion-label style="color:yellow">Username:</ion-label>
+        <input  type="text" formControlName="username" type="username" 
         [class.invalid]="!signupForm.controls.username.valid && blur">
-  
+      
      
       <ion-item class="error-message" *ngIf="!signupForm.controls.username.valid  
       && signupForm.controls.username.touched">
@@ -40,7 +44,7 @@
 
   
   
-    <ion-label>Email:</ion-label>
+    <ion-label style="color:yellow">Email:</ion-label>
     <input type="text" formControlName="email" type="email" 
     [class.invalid]="!signupForm.controls.email.valid && blur">
    
@@ -51,7 +55,7 @@
   </ion-item>
 
   
-    <ion-label>Password:</ion-label>
+    <ion-label style="color:yellow">Password:</ion-label>
     <input type="text"  formControlName="password" type="password" 
     [class.invalid]="!signupForm.controls.password.valid && blur">
     
@@ -61,17 +65,18 @@
   signupForm.controls.password.touched">
     <p ion-text color="danger">Your password needs more than 6 characters.</p>
   </ion-item>
-
   <div paddig>
-  <button  ion-button type="submit" [disabled]="!signupForm.valid">
-    Save
-  </button>
+      <button  ion-button  type="submit" [disabled]="!signupForm.valid">
+        Save
+      </button>
+    </div>
+    
+    <div>
+        <p style="color:white" class="p"> If you wish to sign in you can click here <a style="color:yellow"(click)="gotosignin()">Sign in</a></p>
+    </div>
 </div>
-
-<div>
-    <p style="color:#4d606e" class="p"> If you wish to sign in you can click here <a style="color:#2f4cac"(click)="gotosignin()">Sign in</a></p>
+ 
 </div>
-
 </form>
 </div>
 

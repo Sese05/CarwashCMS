@@ -2,11 +2,13 @@
   <div class="row header">
     <div class="col">
        
-    <button ion-button clear (click)="Signin()"><ion-icon name="log-in"></ion-icon>SignIn</button>
-    <button ion-button clear (click)="Signup()"><ion-icon name="person-add"></ion-icon>SignUp</button>
+    <button ion-button clear (click)="Signin()">SignIn</button>
+    <button ion-button clear (click)="Signup()">SignUp</button>
+    <button ion-button clear (click)="map()">View maps</button>
+    <button ion-button clear (click)="logOut()">LogOut</button>
    
     
-    <button ion-button clear (click)="logOut()"><ion-icon name="log-out"></ion-icon>LogOut</button>
+    
  
   </div>
      
@@ -14,21 +16,20 @@
 </ion-header>
 
 <ion-content class="login-content">
-
-    <div class="sidenav">
-        <button ion-button clear (click)="map()"><ion-icon name="globe"></ion-icon>View maps</button>
-       
-      </div>
+  
+ 
 
   <div class="container">
-<h1>The car wash list</h1>
+    
+    
+<h1 style="color:yellow">The carwash list</h1>
     <!-- We are creating an item that will repeat itself for every event we have in our database.
  We are showing necessary event data like the name, the ticket price for guests and the event date.
  
  When users tap on the event, they are going to be taken to the event’s detail page.
  
  We are sending the event id in the goToEventDetail() function so we can pull the specific ID from Firebase. -->
-
+<div class="car">
   
  <ion-list no-lines>
 
@@ -36,27 +37,31 @@
 
               <ion-item no-lines class="car" *ngFor="let carwash of carwashList; let i =index;" >
               <div class="row header">
-                <div class="col">Carwashes names</div>
-                <div class="col">Location latitude:</div>
-                <div class="col">Location longatude:</div>
+                <div class="col">Car washes</div>
+                <div class="col">Loc lat:</div>
+                <div class="col">Loc long:</div>
                 <div class="col">Weekday opens:</div>
                 <div class="col">Weekday closes:</div>
                 <div class="col"></div>
                 
               </div>
               <div class="row" ng-repeat="data in ctrl.data">
-                <div class="col">{{carwash?.carwashName}}</div>
-                <div class="col">{{carwash?.carwashLatitude}}</div>
-                <div class="col">{{carwash?.carwashLongatude}}</div>
-                <div class="col">{{carwash?.weekdayOpen}}</div>
-                <div class="col">{{carwash?.weekdayClose}}</div>
+                <div style="color:white" class="col">{{carwash?.carwashName}}</div>
+                <div style="color:white" class="col">{{carwash?.carwashLatitude}}</div>
+                <div style="color:white" class="col">{{carwash?.carwashLongatude}}</div>
+                <div style="color:white" class="col">{{carwash?.weekdayOpen}}</div>
+                <div style="color:white" class="col">{{carwash?.weekdayClose}}</div>
               
                 <div class="col">
                     <button ion-button color="primary" icon-left (click)="goToCarwashDetail(carwash.id)">
                         <ion-icon name="ios-create"></ion-icon>
                         Edit
                       </button>
+<<<<<<< HEAD
                 <button ion-button color="danger" icon-left (click)="remove(i)">
+=======
+                <button ion-button color="danger" icon-left (click)="deleteInformation(carwash.id)">
+>>>>>>> 116ca60e7317f2463675512c7513a57c59077023
                   <ion-icon name="ios-trash"></ion-icon>
                   Delete
                 </button>
@@ -72,7 +77,7 @@
       </ion-item>
 
   </ion-list>
-
+</div>
 </div>
 
 

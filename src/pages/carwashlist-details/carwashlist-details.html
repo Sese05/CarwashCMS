@@ -13,11 +13,20 @@
         <ion-grid>
             <ion-row>
               <ion-col col-6>Car wash name:</ion-col>
-              <ion-col col-6><p><strong>{{currentCarwash?.carwashName}}</strong></p></ion-col>
+              <ion-col col-6  (click)="updateCarwashName()" >
+             
+                <ion-icon name="ios-create"></ion-icon>
+                Edit
+
+              <p><strong>{{currentCarwash?.carwashName}}</strong></p>
+            </ion-col>
+           
+
+<!-- 
               <ion-col col-6>Location latitude: </ion-col>
              <ion-col col-6><p><strong>{{currentCarwash?. carwashLatitude}}</strong></p></ion-col>
              <ion-col col-6>Location longitude: </ion-col>
-             <ion-col col-6><p><strong>{{currentCarwash?.carwashLongatude}}</strong></p></ion-col>
+             <ion-col col-6><p><strong>{{currentCarwash?.carwashLongatude}}</strong></p></ion-col> -->
               <ion-col col-6><h3>Weekday times</h3></ion-col>
               
             </ion-row>
@@ -25,19 +34,37 @@
             <ion-row>
 
                 <ion-col col-6> Open:</ion-col>
-                <ion-col col-6><p><strong>{{currentCarwash?.weekdayOpen}}</strong></p></ion-col>
+                <ion-col col-6  (click)="updateWeekdayOpen()" 
+                ><p><strong>{{currentCarwash?.weekdayOpen}}</strong></p>
+              
+                <ion-icon name="ios-create"></ion-icon>
+                Edit
+              </ion-col>
                 <ion-col col-6>Close:</ion-col>
-                <ion-col col-6><p><strong>{{currentCarwash?.weekdayClose}}</strong></p></ion-col>
-
+                <ion-col col-6 (click)="updateweekdayClose()" >
+                <ion-icon name="ios-create"></ion-icon>
+                Edit
+                <p><strong>{{currentCarwash?.weekdayClose}}</strong></p></ion-col>
+               
                 <ion-col col-6><h3>Saturday times</h3></ion-col>
 
             </ion-row>
             <ion-row>
 
                 <ion-col col-6> Open:</ion-col>
-                <ion-col col-6><p><strong>{{currentCarwash?.saturdayOpen}}</strong></p></ion-col>
+                <ion-col col-6
+                (click)=" updatesaturdayOpen()" >
+
+                <ion-icon name="ios-create"></ion-icon>
+                Edit
+                <p><strong>{{currentCarwash?.saturdayOpen}}</strong></p></ion-col>
+                
                 <ion-col col-6>Close:</ion-col>
-                <ion-col col-6><p><strong>{{currentCarwash?.saturdayClose}}</strong></p></ion-col>
+                <ion-col col-6 (click)="updatesaturdayClose()" >
+                <ion-icon name="ios-create"></ion-icon>
+                Edit
+                
+                <p><strong>{{currentCarwash?.saturdayClose}}</strong></p></ion-col>
 
                 <ion-col col-6><h3>Sunday times</h3></ion-col>
 
@@ -45,9 +72,18 @@
             <ion-row>
 
                 <ion-col col-6> Open:</ion-col>
-                <ion-col col-6><p><strong>{{currentCarwash?.sundayOpen}}</strong></p></ion-col>
-                <ion-col col-6>Close:</ion-col>
-                <ion-col col-6><p><strong>{{currentCarwash?.sundayClose}}</strong></p></ion-col>
+                <ion-col col-6 (click)="updatesundayOpen()" >
+                    <ion-icon name="ios-create"></ion-icon>
+                    Edit
+                    <p><strong>{{currentCarwash?.sundayOpen}}</strong></p></ion-col>
+               
+               
+                    <ion-col col-6>Close:</ion-col>
+                <ion-col col-6 (click)=" updatesundayClose()" >
+                    <ion-icon name="ios-create"></ion-icon>
+                    Edit
+                    
+                    <p><strong>{{currentCarwash?.sundayClose}}</strong></p></ion-col>
 
             </ion-row>
           </ion-grid>
@@ -63,23 +99,56 @@
               <ion-grid>
                   <ion-row>
                     <ion-col col-12>Entainment available:</ion-col>
-                    <ion-col col-12><p><strong>{{currentCarwash?.entertainmentAvail}}</strong></p></ion-col>
-                    <ion-col col-6>Entertainment area:</ion-col>
-                    <ion-col col-6><p><strong>{{currentCarwash?.typeOfArea}}</strong></p></ion-col>
+                    <ion-col col-12
+                    (click)=" updateentertainmentAvailable()" >
+                    <ion-icon name="ios-create"></ion-icon>
+                    Edit
+                    <p><strong>{{currentCarwash?.entertainmentAvailable}}</strong></p>
+                  </ion-col>
+                    
+                    <ion-col col-6> NearBy area of Entertainment:</ion-col>
+                    <ion-col col-6 (click)="updatetypeOfArea()" >
+                        <ion-icon name="ios-create"></ion-icon>
+                        Edit
+                        <p><strong>{{currentCarwash?.typeOfArea}}</strong></p></ion-col>
                   </ion-row>
                   <ion-row>
                     <ion-col col-6>Number of sedans:</ion-col>
-                    <ion-col col-6><p><strong>{{currentCarwash?.sedanCars}}</strong></p></ion-col>
+                    <ion-col col-6
+                    (click)=" updatesedanCars()" >
+                    <ion-icon name="ios-create"></ion-icon>
+                    Edit
+                    
+                    <p><strong>{{currentCarwash?.sedanCars}}</strong></p></ion-col>
+                    
                     <ion-col col-6>Number of van:</ion-col>
-                    <ion-col col-6><p><strong>{{currentCarwash?.vanCars}}</strong></p></ion-col>
+                    <ion-col col-6 (click)=" updatevanCars()" >
+                        <ion-icon name="ios-create"></ion-icon>
+                        Edit
+                        <p><strong>{{currentCarwash?.vanCars}}</strong></p></ion-col>
+                   
+                   
                     <ion-col col-6>Number of truck:</ion-col>
-                    <ion-col col-6><p><strong>{{currentCarwash?.truckCars}}</strong></p></ion-col>
+                    <ion-col col-6 (click)=" updatetruckCars()" >
+                        <ion-icon name="ios-create"></ion-icon>
+                        Edit
+                        
+                        <p><strong>{{currentCarwash?.truckCars}}</strong></p></ion-col>
                   </ion-row>
                   <ion-row>
+                    
                     <ion-col col-6>Number of males:</ion-col>
-                    <ion-col col-6><p><strong>{{currentCarwash?.males}}</strong></p></ion-col>
+                    <ion-col col-6 (click)="updatemales()" >
+                        <ion-icon name="ios-create"></ion-icon>
+                        Edit
+                    <p><strong>{{currentCarwash?.males}}</strong></p></ion-col>
+                    
+                    
                     <ion-col col-6>Number of females:</ion-col>
-                    <ion-col col-6><p><strong>{{currentCarwash?.females}}</strong></p></ion-col>
+                    <ion-col col-6  (click)="updatefemales()" >
+                        <ion-icon name="ios-create"></ion-icon>
+                        Edit
+                    <p><strong>{{currentCarwash?.females}}</strong></p></ion-col>
                   </ion-row>
               </ion-grid>
             </ion-card-content>

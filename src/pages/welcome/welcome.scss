@@ -1,24 +1,26 @@
 page-welcome {
     .login-content {
+        background-image: url('../../assets/imgs/sin.jpg');
         background-color:#F9F8EB;
+
         // background-image: url('../../assets/imgs/something.jpg');
          background-repeat :no-repeat;
          background-size:cover;
         }
 
         .car{
-            background-color: transparent;
-           // padding:20px; 
-           //  border-radius: 10px;
+            background-color: rgba(0.0,0.0,0.0,0.3);
+            padding:2px; 
+            border-radius: 0px;
        
         }
 
         .container{
-            
+           
             background-color:transparent;
             border-radius: 50px;
             margin-top: 2%;
-            margin-left: 150px;
+            margin-left: 170px;
             margin-right: 150px;
             padding:0px;
           box-shadow: none;
@@ -27,21 +29,11 @@ page-welcome {
           left: 0;
           flex-direction: column;
           right: 0;
-          position: absolute;
-         
+          position: absolute;         
          }
 
          
-    // p {
-     
-    //     text-align: right;
-        
-    //   }
-
-      body {
-        cursor: url('http://ionicframework.com/img/finger.png'), auto;
-    }
-    
+  
     .header .col {
         background-color:lightgrey;
     }
@@ -53,19 +45,20 @@ page-welcome {
         border-bottom-style: none;
         border-right-style: none;
         text-align: right;
+        
     }
+
+    // .row{
+    //     color: white;
+    // }
+
     h1{
         text-align: center
     }
+ 
     
-    // .col:last-child {
-    //    // border-right: solid 1px grey;
-    // }
-    
-    // .row:last-child .col {
-    //   //  border-bottom: solid 1px grey;
-    // }
-
+      
+     
     .sidenav {
         height: 100%;
         width: 160px;

@@ -1,3 +1,6 @@
+import { WelcomePage } from './../welcome/welcome';
+import { SignupPage } from './../signup/signup';
+import { SigninPage } from './../signin/signin';
 
 
 import { Geofence } from '@ionic-native/geofence';
@@ -49,7 +52,7 @@ loadmap() {
   this.map = leaflet.map("map").fitWorld();
   leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attributions: 'www.tphangout.com',
-    maxZoom: 14
+    maxZoom: 100
   }).addTo(this.map);
   this.map.locate({
     setView: true,
@@ -179,6 +182,15 @@ loadmap() {
        () => console.log('Geofence added'),
        (err) => console.log('Geofence failed to add')
      );
+  }
+  signIn(){
+    this.navCtrl.push(SigninPage)
+  }
+  signUp(){
+    this.navCtrl.push(SignupPage)
+  }
+  logOut(){
+    this.navCtrl.push(SigninPage) 
   }
 }
 
