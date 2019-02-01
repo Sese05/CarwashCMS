@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import firebase , { User }from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import { List } from 'ionic-angular';
 
 @Injectable()
 export class CarwashProvider {
@@ -11,7 +12,7 @@ export class CarwashProvider {
   currentUser:User;
 
   public carWashListRef: firebase.database.Reference;
-
+Item:any;
 
   constructor() {
     this.carWashListRef=firebase.database().ref(`/carwashlists`)
@@ -66,4 +67,5 @@ export class CarwashProvider {
   getcarwashDetail(carwashId:string): firebase.database.Reference {
     return this.carWashListRef.child(carwashId);
   }
+  
 }
