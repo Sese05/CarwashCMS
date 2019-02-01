@@ -72,7 +72,7 @@ loadmap() {
         fillOpacity: 0.5,
         radius: 4500
      }).addTo(this.map);
-     circle.bindPopup("My area.");
+     circle.bindPopup("This is Tembisa");
    }).on('locationerror', (err) => {
      alert(err.message);
    });
@@ -138,7 +138,7 @@ loadmap() {
  
   getAllCoordinates(){
 
-    //Now we need to get that list of carwashes from Firebase
+    //Now we need to get that list of co ordinates from Firebase
     firebase.database().ref("/carwashlists").on("value", carwashListSnapshot => {
       this.carwashList= [];
       carwashListSnapshot.forEach(snap => {
