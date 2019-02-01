@@ -22,7 +22,7 @@
   <div class="container">
     
     
-<h1>The car wash list</h1>
+<h1 style="color:yellow">The carwash list</h1>
     <!-- We are creating an item that will repeat itself for every event we have in our database.
  We are showing necessary event data like the name, the ticket price for guests and the event date.
  
@@ -35,9 +35,9 @@
 
     
 
-              <ion-item no-lines class="car" *ngFor="let carwash of carwashList" >
+              <ion-item no-lines class="car" *ngFor="let carwash of carwashList; let i =index;" >
               <div class="row header">
-                <div class="col">Carwashes names</div>
+                <div class="col">Car washes</div>
                 <div class="col">Loc lat:</div>
                 <div class="col">Loc long:</div>
                 <div class="col">Weekday opens:</div>

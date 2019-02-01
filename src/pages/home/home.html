@@ -2,9 +2,8 @@
     <div class="row header">
         <div class="col">
            
-        <button ion-button clear (click)="Signin()">SignIn</button>
-        <button ion-button clear (click)="Signup()">SignUp</button>
-        <button ion-button clear (click)="map()">View maps</button>
+        <button ion-button clear (click)="signIn()">SignIn</button>
+        <button ion-button clear (click)="signUp()">SignUp</button>
         <button ion-button clear (click)="logOut()">LogOut</button>
        
         
@@ -14,6 +13,6 @@
          
       </div>
 </ion-header>
-
+<div id="map" style="width:100%; height:100%;"></div>
   <ion-content>
-    <div id="map" style="width:100%; height:100%;"></div>
+   

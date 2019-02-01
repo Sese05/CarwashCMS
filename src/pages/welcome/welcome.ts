@@ -9,6 +9,8 @@ import { IonicPage, NavController, NavParams, Alert, AlertController } from 'ion
 import firebase , { User }from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import { WeekDay } from '@angular/common';
+
 
 
 
@@ -21,8 +23,9 @@ export class WelcomePage {
 //declaring list variables
   public carwashList: Array<any>;
 
-
-
+  public carWashListRef: firebase.database.Reference;
+  id:any;
+  database:any;
   constructor(public navCtrl: NavController,private carPro:CarwashProvider,
      public navParams: NavParams,public authProvider: AuthProvider,public alertCtrl:AlertController) {
   
@@ -76,14 +79,7 @@ map(){
 Signup(){
   this.navCtrl.push(SignupPage);
 }
-Signin(){
-this.navCtrl.push(SigninPage);
-}
-logOut(): void {
- 
-    this.navCtrl.setRoot(SignupPage);
 
-}
 
 deleteInformation(carwashId){
   const alert:Alert=this.alertCtrl.create({
