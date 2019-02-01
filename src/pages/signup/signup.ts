@@ -1,3 +1,4 @@
+import { SigninPage } from './../signin/signin';
 import { CarwashlistDetailsPage } from './../carwashlist-details/carwashlist-details';
 import { WelcomePage } from './../welcome/welcome';
 import { Component } from '@angular/core';
@@ -81,8 +82,8 @@ export class SignupPage {
       this.loading.present();
     }
   }
-  gotosignin(){
-    this.navCtrl.push(WelcomePage);
+  Signin(){
+    this.navCtrl.push(SigninPage);
   }
 }
 

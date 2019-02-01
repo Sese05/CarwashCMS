@@ -79,7 +79,9 @@ map(){
 Signup(){
   this.navCtrl.push(SignupPage);
 }
-
+  SignIn(){
+    this.navCtrl.push(SigninPage)
+  }
 
 deleteInformation(carwashId){
   const alert:Alert=this.alertCtrl.create({
@@ -97,6 +99,10 @@ deleteInformation(carwashId){
 })
 alert.present()
  }
-     
+ logOut(): void {
+  this.authProvider.logoutUser().then(() => {
+    this.navCtrl.setRoot(SigninPage);
+  });
+}
 
 }

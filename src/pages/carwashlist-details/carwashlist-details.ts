@@ -17,14 +17,14 @@ export class CarwashlistDetailsPage {
   public currentCarwash: any = {};
   id:any;
   carWashupdateRef:firebase.database.Reference;
-
+  
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,private carPro:CarwashProvider,private alertCtrl:AlertController) {
     //get key
 
       this.id=this.navParams.get('carwashId')
        console.log('getID',this.id)
-  
+   
     }
 
   ionViewCanEnter() {
@@ -45,7 +45,7 @@ export class CarwashlistDetailsPage {
      inputs:[{
        name:'carwashName',
        placeholder:'carwash name',
-    
+       value:'carwashName'
   }],
   buttons:[{
     text:'cancel',
@@ -53,6 +53,7 @@ export class CarwashlistDetailsPage {
     text:'save',
     handler:data =>{
        this.updateCarName(data.carwashName)
+       console.log(data.carwashName)
       }
   }]
  })
