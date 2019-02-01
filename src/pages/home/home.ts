@@ -64,7 +64,7 @@ loadmap() {
         fillOpacity: 0.5,
         radius: 4500
      }).addTo(this.map);
-     circle.bindPopup("My area.");
+     circle.bindPopup("This is Tembisa");
    }).on('locationerror', (err) => {
      alert(err.message);
    });
@@ -108,7 +108,9 @@ loadmap() {
     .then((coordinates: NativeGeocoderForwardResult[]) => {
         let markerGroup = leaflet.featureGroup();
         let marker: any = leaflet.marker([coordinates[0].latitude, coordinates[0].longitude]).on('click', () => {
-        alert('Marker clicked');
+       
+       
+          alert('Marker clicked');
       })
       markerGroup.addLayer(marker);
       this.map.addLayer(markerGroup);
@@ -124,7 +126,7 @@ this.populateMap("latitude", "longitude");
 
   getAllCoordinates(){
 
-    //Now we need to get that list of carwashes from Firebase
+    //Now we need to get that list of co ordinates from Firebase
     firebase.database().ref("/carwashlists").on("value", carwashListSnapshot => {
       this.carwashList= [];
       carwashListSnapshot.forEach(snap => {
@@ -135,9 +137,16 @@ this.populateMap("latitude", "longitude");
     });
   }
 
+  populateMarkersInformation(){
+    
+  }
+
   populateMap(latitude, longitude){
       let markerGroup = leaflet.featureGroup();
       let marker: any = leaflet.marker([latitude, longitude]).on('click', () => {
+         //populate markers with general information
+
+
         alert('Marker clicked');
       })
       markerGroup.addLayer(marker);
