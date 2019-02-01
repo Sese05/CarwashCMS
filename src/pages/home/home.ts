@@ -1,4 +1,5 @@
 
+
 import { Geofence } from '@ionic-native/geofence';
 import { CarwashProvider } from './../../providers/carwash/carwash';
 
@@ -20,10 +21,12 @@ export class HomePage {
  @ViewChild('map') mapContainer: ElementRef;
  map: any;
 
- public longLat:Array<any>
- public longLng:Array<any>
+carWashName;
+weekdayOpen;
+weekdayClose;
+
  public carwashList: Array<any>;
- 
+ CarwashList=[]; 
 constructor(public navCtrl: NavController,private carPro:CarwashProvider,public navParams: NavParams,
   private alertCtrl:AlertController,private nativeGeocoder: NativeGeocoder,private geofence:Geofence) {
 
@@ -40,6 +43,8 @@ constructor(public navCtrl: NavController,private carPro:CarwashProvider,public 
   this.loadmap();
 }
 
+
+
 loadmap() {
   this.map = leaflet.map("map").fitWorld();
   leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -55,9 +60,8 @@ loadmap() {
     this.map.setView([-26.0063121, 28.2108827], 16);
     let markerGroup = leaflet.featureGroup();
     let marker: any = leaflet.marker([-26.0063121, 28.2108827]);
-    marker.bindPopup("<html>I'm here!</b><html>").openPopup();
+    marker.bindPopup("<html>This is Tembisa!</b><html>").openPopup();
     markerGroup.addLayer(marker);
-
     this.map.addLayer(markerGroup);
     var circle = leaflet.circle([-26.0063121, 28.2108827], {
       color: 'green',
@@ -103,43 +107,54 @@ loadmap() {
       ]
     });
     prompt.present();
+    
+
+
+
   }
   geoCodeandAdd(city) {
     this.nativeGeocoder.forwardGeocode(city)
     .then((coordinates: NativeGeocoderForwardResult[]) => {
         let markerGroup = leaflet.featureGroup();
         let marker: any = leaflet.marker([coordinates[0].latitude, coordinates[0].longitude]).on('click', () => {
-        alert('Marker clicked');
+          alert('Marker clicked');
+
       })
       markerGroup.addLayer(marker);
       this.map.addLayer(markerGroup);
     
 
 
-this.populateMap("latitude", "longitude");
+     this.populateMap("latitude", "longitude");
 
       })
       
   .catch((error: any) => console.log(error));
   }
 
+ 
   getAllCoordinates(){
 
     //Now we need to get that list of carwashes from Firebase
     firebase.database().ref("/carwashlists").on("value", carwashListSnapshot => {
       this.carwashList= [];
       carwashListSnapshot.forEach(snap => {
-          this.populateMap(snap.val().carwashLatitude, snap.val().carwashLongatude)
+          this.populateMap(snap.val().carwashLatitude, snap.val().carwashLongatude,snap.val().carwashName, snap.val().weekdayOpen,snap.val().weekdayClose)
           console.log("Location")
           console.log(snap.val().carwashLatitude + " value " + snap.val().carwashLongatude)
+         
       });
     });
   }
 
-  populateMap(latitude, longitude){
+  populateMap(latitude, longitude,name?,weekOpen?,weekClose?){
       let markerGroup = leaflet.featureGroup();
       let marker: any = leaflet.marker([latitude, longitude]).on('click', () => {
-        alert('Marker clicked');
+        marker.bindPopup( name   + "<dt>weekdayOpen:</dt>"  + weekOpen +"<dt>weekdayClose:</dt>" + weekClose).openPopup();
+        
+        this.carWashName = name;
+        this.weekdayOpen=weekOpen;
+        this.weekdayClose=weekClose;
       })
       markerGroup.addLayer(marker);
       this.map.addLayer(markerGroup);

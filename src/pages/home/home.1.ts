@@ -44,13 +44,15 @@ loadmap() {
   this.map = leaflet.map("map").fitWorld();
   leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attributions: 'www.tphangout.com',
-    maxZoom: 14
+    maxZoom: 10
   }).addTo(this.map);
-  
+ 
+   this.map._layersMinZoom=2;
 
-
+ 
   this.getAllCoordinates()
-   
+
+    
   }
  
   addMarker() {
@@ -87,7 +89,7 @@ loadmap() {
     .then((coordinates: NativeGeocoderForwardResult[]) => {
         let markerGroup = leaflet.featureGroup();
         let marker: any = leaflet.marker([coordinates[0].latitude, coordinates[0].longitude]).on('click', () => {
-        alert('Marker clicked');
+        // alert('Marker clicked');
       })
       markerGroup.addLayer(marker);
       this.map.addLayer(markerGroup);
@@ -120,7 +122,7 @@ this.populateMap("latitude", "longitude");
       markerGroup.addLayer(marker);
       this.map.addLayer(markerGroup);
    }
-
+  
    private addGeofence(){
     let fence = {
       id: 'Data Watch', 

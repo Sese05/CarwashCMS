@@ -1,3 +1,5 @@
+import { AuthProvider } from './../../providers/auth/auth';
+import { SigninPage } from './../signin/signin';
 import { SignupPage } from './../signup/signup';
 import { CarwashlistDetailsPage } from './../carwashlist-details/carwashlist-details';
 import { CarwashProvider } from './../../providers/carwash/carwash';
@@ -88,10 +90,5 @@ Signup(){
 //   return this.carWashDeleteRef.remove(deleteId);
 
 //  }
- remove(no){
-  let carWashListRef= firebase.database().ref('carwashlist/' + this.id);
-  carWashListRef.remove()
-  this.carwashList.splice(no ,1);
-
-}
+ 
 }
