@@ -7,6 +7,17 @@ page-home {
         background-color:skyblue;
     }
     
+    .header .col {
+        background-color:lightgrey;
+    
+    }
+    .col {
+        // border: solid 1px grey;
+         border-bottom-style: none;
+         border-right-style: none;
+         text-align: right;
+         
+     }
 
     .login-content {
        

@@ -4,6 +4,7 @@ page-signin {
       background-size: 100% 100%;
       background-repeat: no-repeat;
       //background-color:#d7fbe8;
+      position: relative;
   }
   .scroll-content {
       overflow: hidden !important;
@@ -15,7 +16,8 @@ page-signin {
     border-radius: 10px;
     border-style: inset;
     border-width: 10px;
-    
+    margin: 5px 0 22px 0;
+    position: absolute;
   
 }
   .container{
@@ -26,13 +28,14 @@ page-signin {
     margin-top: 4%;
     margin-left: 300px;
     margin-right: 300px;
-    padding:0px;
+   // max-width: 300px;
+   // padding:16px;
   box-shadow: none;
   top: 0;
   bottom: 0;
   left: 50px;
   right: 0px;
-  //position: absolute;
+    position: absolute;
 
   .name-holder {
     width: 100%;
@@ -79,4 +82,40 @@ page-signin {
     
 }
   }
+  .btn {
+    background-color: #1f3c88;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+  }
+
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  input[type=text], input[type=email] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+
+
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  
 }

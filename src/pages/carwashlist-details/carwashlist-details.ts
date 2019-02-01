@@ -1,3 +1,6 @@
+import { SigninPage } from './../signin/signin';
+import { SignupPage } from './../signup/signup';
+import { HomePage } from './../home/home';
 import { CarwashProvider } from './../../providers/carwash/carwash';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController ,Alert} from 'ionic-angular';
@@ -366,23 +369,34 @@ updateInfoSundayClose(sundayClose:string):Promise<any>{
  //alert for carwash names
  updateentertainmentAvailable(){
   const alert:Alert=this.alertCtrl.create({
-   message:"update entertainment Available?",
-   inputs:[{
-     name:'entertainmentAvailable',
-     placeholder:'entertainment Available',
+    message:"update entertainment available?",
+    inputs:[
+      {
+      name:'entertainmentAvailable',
+      type: 'radio',
+      label: 'yes',
+      value:'yes'
+      
+ },{
+   name:'entertainmentAvailable',
+   type: 'radio',
+   label: 'no',
+   value:'no'
   
-}],
-buttons:[{
-  text:'cancel',
-},{
-  text:'save',
-  handler:data =>{
-     this.updateEntertainmentAvailable(data.entertainmentAvailable)
-    }
-}]
-})
-alert.present()
-}
+ }
+ ],
+ buttons:[{
+   text:'cancel',
+ },{
+   text:'save',
+   handler:data =>{
+     this.updateEntertainmentAvailable(data)
+     console.log(data)
+     }
+ }]
+ })
+ alert.present()
+ }
 
 
 //update carwash name
@@ -576,5 +590,19 @@ updateInfofemales(females:string):Promise<any>{
   return this.carWashupdateRef.update({ females });
 }
 
+map(){
+  this.navCtrl.push(HomePage);
+}
+Signup(){
+  this.navCtrl.push(SignupPage);
+}
+Signin(){
+this.navCtrl.push(SigninPage);
+}
+logOut(): void {
+ 
+    this.navCtrl.setRoot(SigninPage);
+
+}
 
 }

@@ -176,6 +176,9 @@ this.populateMap("latitude", "longitude");
   logOut(){
     this.navCtrl.push(SigninPage) 
   }
+  car(){
+    this.navCtrl.push(WelcomePage) 
+  }
 }
 
 

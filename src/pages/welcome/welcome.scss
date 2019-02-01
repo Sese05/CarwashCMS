@@ -29,7 +29,8 @@ page-welcome {
           left: 0;
           flex-direction: column;
           right: 0;
-          position: absolute;         
+         
+          //position: relative;         
          }
 
          
@@ -45,6 +46,7 @@ page-welcome {
         border-bottom-style: none;
         border-right-style: none;
         text-align: right;
+       // position: relative;
         
     }
 
