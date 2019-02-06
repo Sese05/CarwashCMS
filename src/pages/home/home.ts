@@ -30,14 +30,9 @@ weekdayClose;
  public carwashList: Array<any>;
  CarwashList=[]; 
 
-latitude:any;
-longitude:any;
-responseObj:any;
+lat:any;
+lng:any;
 
-geoencoderOptions: NativeGeocoderOptions = {
-  useLocale: true,
-  maxResults: 5
-};
 
 
 constructor(public navCtrl: NavController,private carPro:CarwashProvider,public navParams: NavParams,
@@ -49,12 +44,7 @@ constructor(public navCtrl: NavController,private carPro:CarwashProvider,public 
     () => console.log('Geofence Plugin Ready'),
     (err) => console.log(err)
   )
-  this.responseObj = {
-    latitude:0,
-    longitude:0,
-    accuracy:0,
-    address:""
-  };
+ 
 }
 
     
@@ -142,14 +132,6 @@ loadmap(){
   }
   geoCodeandAdd(city) {
 
-
-    this.nativeGeocoder.reverseGeocode(this.latitude, this.longitude, this.geoencoderOptions)
-    .then((result: NativeGeocoderReverseResult[]) => {
-      this.responseObj.address = this.generateAddress(result[0]);
-      this.loadmap();
-    })
-
-
     this.nativeGeocoder.forwardGeocode(city)
     .then((coordinates: NativeGeocoderForwardResult[]) => {
         let markerGroup = leaflet.featureGroup();
@@ -171,20 +153,6 @@ loadmap(){
 }
 
   
-generateAddress(addressObj){
-  let obj = [];
-  let address = "";
-  for (let key in addressObj) {
-    obj.push(addressObj[key]);
-  }
-  obj.reverse();
-  for (let val in obj) {
-    if(obj[val].length)
-    address += obj[val]+', ';
-  }
-return address.slice(0, -2);
-}
- 
   getAllCoordinates(){
 
     //Now we need to get that list of co ordinates from Firebase
