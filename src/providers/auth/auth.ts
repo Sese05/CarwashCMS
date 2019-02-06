@@ -44,8 +44,8 @@ export class AuthProvider {
 
  //logout function
      logoutUser(): Promise<void> {
-  const userId: string = firebase.auth().currentUser.uid;
-  firebase
+      const userId: string = firebase.auth().currentUser.uid;
+      firebase
     .database()
     .ref(`/userProfile/${userId}`)
     .off();

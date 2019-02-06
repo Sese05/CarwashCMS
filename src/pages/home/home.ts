@@ -42,7 +42,9 @@ constructor(public navCtrl: NavController,private carPro:CarwashProvider,public 
   
     }
 
- ionViewDidEnter() {
+ ionViewDidLoad(){
+  
+
   this.loadmap();
 }
 

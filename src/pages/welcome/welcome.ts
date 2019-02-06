@@ -99,6 +99,7 @@ deleteInformation(carwashId){
 })
 alert.present()
  }
+ 
  logOut(): void {
   this.authProvider.logoutUser().then(() => {
     this.navCtrl.setRoot(SigninPage);
