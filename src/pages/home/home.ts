@@ -1,5 +1,4 @@
 import { WelcomePage } from './../welcome/welcome';
-import { SignupPage } from './../signup/signup';
 import { SigninPage } from './../signin/signin';
 
 
@@ -9,7 +8,7 @@ import { CarwashProvider } from './../../providers/carwash/carwash';
 import { Component,ViewChild,ElementRef } from '@angular/core';
 import { NavController, AlertController, Platform, NavParams } from 'ionic-angular';
 import leaflet from 'leaflet';
-import { NativeGeocoder, NativeGeocoderForwardResult} from '@ionic-native/native-geocoder';
+import { NativeGeocoder,NativeGeocoderReverseResult, NativeGeocoderForwardResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder';
 
 
 import firebase , { User }from 'firebase/app';
@@ -30,8 +29,19 @@ weekdayClose;
 
  public carwashList: Array<any>;
  CarwashList=[]; 
+
+latitude:any;
+longitude:any;
+responseObj:any;
+
+geoencoderOptions: NativeGeocoderOptions = {
+  useLocale: true,
+  maxResults: 5
+};
+
+
 constructor(public navCtrl: NavController,private carPro:CarwashProvider,public navParams: NavParams,
-  private alertCtrl:AlertController,private nativeGeocoder: NativeGeocoder,private geofence:Geofence) {
+  private alertCtrl:AlertController,private nativeGeocoder: NativeGeocoder,private geofence:Geofence ) {
 
   // initialize the plugin
   geofence.initialize().then(
@@ -39,8 +49,15 @@ constructor(public navCtrl: NavController,private carPro:CarwashProvider,public 
     () => console.log('Geofence Plugin Ready'),
     (err) => console.log(err)
   )
-  
-    }
+  this.responseObj = {
+    latitude:0,
+    longitude:0,
+    accuracy:0,
+    address:""
+  };
+}
+
+    
 
  ionViewDidEnter() {
   this.loadmap();
@@ -48,8 +65,12 @@ constructor(public navCtrl: NavController,private carPro:CarwashProvider,public 
 
 
 
-loadmap() {
-  this.map = leaflet.map("map").fitWorld();
+loadmap(){
+  this.map = leaflet.map(this.mapContainer.nativeElement,{
+    dragging:false,
+    doubleClickZoom:false,
+    zoomControl:false
+  });
   leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attributions: 'www.tphangout.com',
     maxZoom: 13
@@ -77,6 +98,8 @@ loadmap() {
      alert(err.message);
    });
 
+  
+   
 
   this.getAllCoordinates()
    
@@ -116,25 +139,49 @@ loadmap() {
 
   }
   geoCodeandAdd(city) {
+
+
+    this.nativeGeocoder.reverseGeocode(this.latitude, this.longitude, this.geoencoderOptions)
+    .then((result: NativeGeocoderReverseResult[]) => {
+      this.responseObj.address = this.generateAddress(result[0]);
+      this.loadmap();
+    })
+
+
     this.nativeGeocoder.forwardGeocode(city)
     .then((coordinates: NativeGeocoderForwardResult[]) => {
         let markerGroup = leaflet.featureGroup();
         let marker: any = leaflet.marker([coordinates[0].latitude, coordinates[0].longitude]).on('click', () => {
           alert('Marker clicked');
 
-      })
+  
+
+    })
+
       markerGroup.addLayer(marker);
       this.map.addLayer(markerGroup);
     
-
-
      this.populateMap("latitude", "longitude");
 
-      })
+   })
       
   .catch((error: any) => console.log(error));
-  }
+}
 
+  
+generateAddress(addressObj){
+  let obj = [];
+  let address = "";
+  for (let key in addressObj) {
+    obj.push(addressObj[key]);
+  }
+  obj.reverse();
+  for (let val in obj) {
+    if(obj[val].length)
+    address += obj[val]+', ';
+  }
+return address.slice(0, -2);
+}
  
   getAllCoordinates(){
 
@@ -183,12 +230,14 @@ loadmap() {
        (err) => console.log('Geofence failed to add')
      );
   }
-  signIn(){
-    this.navCtrl.push(SigninPage)
-  }
-  signUp(){
-    this.navCtrl.push(SignupPage)
-  }
+
+
+  // signIn(){
+  //   this.navCtrl.push(SigninPage)
+  // }
+  // signUp(){
+  //   this.navCtrl.push(SignupPage)
+  // }
   logOut(){
     this.navCtrl.push(SigninPage) 
   }

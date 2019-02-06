@@ -10,7 +10,7 @@ import { IonicApp, IonicErrorHandler, IonicModule, Config } from 'ionic-angular'
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import {Geolocation} from '@ionic-native/geolocation';
-import { NativeGeocoder, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
+import { NativeGeocoder,NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CarwashProvider } from '../providers/carwash/carwash';
