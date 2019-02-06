@@ -61,6 +61,7 @@ Item:any;
    //listing function
    getcarwashList(): firebase.database.Reference {
      console.log("list",this.carWashListRef)
+
     return this.carWashListRef;
   }
   // receiving an event’s ID and returning that event

@@ -1,3 +1,4 @@
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { AuthProvider } from './../../providers/auth/auth';
 import { SigninPage } from './../signin/signin';
 import { SignupPage } from './../signup/signup';
@@ -27,7 +28,7 @@ export class WelcomePage {
   id:any;
   database:any;
   constructor(public navCtrl: NavController,private carPro:CarwashProvider,
-     public navParams: NavParams,public authProvider: AuthProvider,public alertCtrl:AlertController) {
+     public navParams: NavParams,public authProvider: AuthProvider,public alertCtrl:AlertController, private geocoder:NativeGeocoder) {
   
     }
 
@@ -76,12 +77,13 @@ goToCarwashDetail(carwashId: string):void {
 map(){
   this.navCtrl.push(HomePage);
 }
-Signup(){
-  this.navCtrl.push(SignupPage);
-}
-  SignIn(){
-    this.navCtrl.push(SigninPage)
-  }
+
+// Signup(){
+//   this.navCtrl.push(SignupPage);
+// }
+//   SignIn(){
+//     this.navCtrl.push(SigninPage)
+//   }
 
 deleteInformation(carwashId){
   const alert:Alert=this.alertCtrl.create({
@@ -95,15 +97,17 @@ deleteInformation(carwashId){
     firebase.database().ref(`/carwashlists/`+carwashId).remove();
 
      }
+     
  }]
 })
 alert.present()
  }
- 
- logOut(): void {
-  this.authProvider.logoutUser().then(() => {
+ logOut(){
+   this.authProvider.logoutUser().then(() => {
     this.navCtrl.setRoot(SigninPage);
-  });
+ });
+ 
+
 }
 
 }
