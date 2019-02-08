@@ -375,69 +375,53 @@ updateInfoSundayClose(sundayClose:string):Promise<any>{
   return this.carWashupdateRef.update({ sundayClose});
 }
   //category 2
- //alert for carwash names
- updateentertainmentAvailable(){
-  const alert:Alert=this.alertCtrl.create({
-    message:"update entertainment available?",
-    inputs:[
-      {
-      name:'entertainmentAvailable',
-      type: 'radio',
-      label: 'yes',
-      value:'yes'
-      
- },{
-   name:'entertainmentAvailable',
-   type: 'radio',
-   label: 'no',
-   value:'no'
-  
- }
- ],
- buttons:[{
-   text:'cancel',
- },{
-   text:'save',
-   handler:data =>{
-     this.updateEntertainmentAvailable(data)
-     console.log(data)
-     }
- }]
- })
- alert.present()
- }
 
 
-//update carwash name
-updateEntertainmentAvailable(entertainment:string){
-  this.carWashupdateRef=firebase.database().ref(`/carwashlists/`+this.id);
-  this.updateInfoentertainmentAvailable(entertainment);
-}
-updateInfoentertainmentAvailable(entertainmentAvailable:string):Promise<any>{
-  return this.carWashupdateRef.update({ entertainmentAvailable});
-}
 
    //alert for entertainmentarea
    updatetypeOfArea(){
     const alert:Alert=this.alertCtrl.create({
-     message:"update type Of Area?",
-     inputs:[{
-       name:'typeOfArea',
-       placeholder:'area type',
-       
-    
-  }],
-  buttons:[{
-    text:'cancel',
-  },{
-    text:'save',
-    handler:data =>{
-       this.updateAreaType(data.typeOfArea)
-      }
-  }]
- })
- alert.present()
+      message:"update area of entertainment?",
+      inputs:[
+        {
+        name:'typeOfArea',
+        type: 'radio',
+        label: 'Tarven/Pub',
+        value:'Tarven/Pub'
+   },{
+     name:'typeOfArea',
+     type: 'radio',
+     label: 'Park',
+     value:'Park'
+   },{
+     name:'typeOfArea',
+     type: 'radio',
+     label: 'eatry/Resturant',
+     value:'eatry/Resturant'
+   },{
+     name:'typeOfArea',
+     type: 'radio',
+     label: 'Shisa Nyama',
+     value:'Shisa Nyama'
+   },{
+    name:'typeOfArea',
+    type: 'radio',
+    label: 'None',
+    value:'none'
   }
+   ],
+   buttons:[{
+     text:'cancel',
+   },{
+     text:'save',
+     handler:data =>{
+        this.updateAreaType(data)
+        console.log(data)
+       }
+   }]
+   })
+   alert.present()
+   }
 
 
   //update area type
