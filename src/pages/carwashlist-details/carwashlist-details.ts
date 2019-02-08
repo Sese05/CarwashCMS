@@ -82,8 +82,8 @@ export class CarwashlistDetailsPage {
     name:'weekdayOpen',
     type: 'radio',
     label: '08:00',
-    value:'08:00'
-    
+    value:'08:00',
+    checked:true
 },{
  name:'weekdayOpen',
  type: 'radio',
