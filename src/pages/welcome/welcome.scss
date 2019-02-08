@@ -8,80 +8,74 @@ page-welcome {
          background-size:cover;
         }
 
-        .car{
-            background-color: rgba(0.0,0.0,0.0,0.3);
-            padding:2px; 
-            border-radius: 0px;
+     .car{
+            // background-color: rgba(0.0,0.0,0.0,0.3);
+             padding:2px; 
+           border-radius: 0px;
+           padding-top: 2px;
+           padding-bottom: 2px;
        
-        }
+      }
+      .odd {
+        background-color:  rgba(0.0,0.0,0.0,0.3);
+    
+    }
+    .even {
+        background-color: lightgrey;
+    }
 
-        .container{
-           
-            background-color:transparent;
-            border-radius: 50px;
-            margin-top: 2%;
-            margin-left: 170px;
-            margin-right: 150px;
-            padding:0px;
-          box-shadow: none;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          flex-direction: column;
-          right: 0;
-         
-          //position: relative;         
-         }
-
-         
-  
+          
     .header .col {
-        background-color:lightgrey;
+        background-color:burlywood;
     }
 
+
     
-    
-    .col {
-       // border: solid 1px grey;
-        border-bottom-style: none;
-        border-right-style: none;
-        text-align: right;
-       // position: relative;
+    //  .col {
+    //     // border: solid 1px grey;
+    //    border-bottom-style: none;
+    //  border-right-style: none;
+    //     text-align: right;
+    //  //  position: relative;
         
-    }
-
-    // .row{
-    //     color: white;
     // }
 
+    .row{
+        color:black;
+    }
+
     h1{
-        text-align: center
+        text-align: center;
     }
  
+   
     
       
      
-    .sidenav {
-        height: 100%;
-        width: 160px;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        padding-top: 20px;
-      }
+    // .sidenav {
+    //     height: 100%;
+    //     width: 160px;
+    //     position: fixed;
+    //     z-index: 1;
+    //     top: 0;
+    //     left: 0;
+    //     background-color: #111;
+    //     overflow-x: hidden;
+    //     padding-top: 20px;
+    //   }
       
-      .sidenav a {
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-      }
+    //   .sidenav a {
+    //     padding: 6px 8px 6px 16px;
+    //     text-decoration: none;
+    //     font-size: 25px;
+    //     color: #818181;
+    //     display: block;
+    //   }
       
-      .sidenav a:hover {
-        color: #f1f1f1;
-      }
+    //   .sidenav a:hover {
+    //     color: #f1f1f1;
+    //   }
+    // }
+   
+
 }

@@ -1,5 +1,7 @@
+import { WelcomePage } from './../welcome/welcome';
+
 import { SigninPage } from './../signin/signin';
-import { SignupPage } from './../signup/signup';
+// import { SignupPage } from './../signup/signup';
 import { HomePage } from './../home/home';
 import { CarwashProvider } from './../../providers/carwash/carwash';
 import { Component } from '@angular/core';
@@ -594,11 +596,14 @@ updateInfofemales(females:string):Promise<any>{
 map(){
   this.navCtrl.push(HomePage);
 }
-Signup(){
-  this.navCtrl.push(SignupPage);
-}
-Signin(){
-this.navCtrl.push(SigninPage);
+// Signup(){
+//   this.navCtrl.push(SignupPage);
+// }
+// Signin(){
+// this.navCtrl.push(SigninPage);
+// }
+car(){
+  this.navCtrl.push(WelcomePage);
 }
 logOut(): void {
  

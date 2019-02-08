@@ -27,6 +27,7 @@
     "@ionic-native/splash-screen": "~4.17.0",
     "@ionic-native/status-bar": "~4.17.0",
     "@ionic/storage": "2.2.0",
+    "ag-grid": "^18.1.2",
     "angularfire2": "^5.1.1",
     "cordova-android": "7.1.4",
     "cordova-plugin-add-swift-support": "1.6.0",
