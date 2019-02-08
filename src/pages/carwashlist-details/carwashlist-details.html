@@ -4,9 +4,9 @@
            
         <!-- <button ion-button clear (click)="Signin()">SignIn</button>
         <button ion-button clear (click)="Signup()">SignUp</button> -->
-        <button ion-button clear (click)="car()">Carwash details</button>
-        <button ion-button clear (click)="map()">View maps</button>
-        <button ion-button clear (click)="logOut()">LogOut</button>
+        <button ion-button clear style="color:black" (click)="car()">Carwash details</button>
+        <button ion-button clear style="color:black" (click)="map()">View maps</button>
+        <button ion-button clear style="color:black" (click)="logOut()">LogOut</button>
        
         
         
@@ -21,7 +21,7 @@
   <div class="container">
       <ion-card class="car" >
           <ion-card-header class="header">
-              <h2>Category 1 main information</h2>
+              <h2>Category 1: main information</h2>
           </ion-card-header>
           <ion-card-content  style="color:white">
               <ion-grid>
@@ -30,7 +30,7 @@
                     <ion-col col-6  (click)="updateCarwashName()" >
                     <ion-col col-3><strong>{{currentCarwash?.carwashName}}</strong></ion-col>
                    
-                    <ion-icon name="ios-create">Edit</ion-icon>
+                    <button  outline ion-button>Edit</button>
                   </ion-col>
                  
       
@@ -39,7 +39,7 @@
                    <ion-col col-6><p><strong>{{currentCarwash?. carwashLatitude}}</strong></p></ion-col>
                    <ion-col col-6>Location longitude: </ion-col>
                    <ion-col col-6><p><strong>{{currentCarwash?.carwashLongatude}}</strong></p></ion-col> -->
-                    <ion-col  col-6><h3>Weekday times</h3></ion-col>
+                    <ion-col  col-6><h3 style="color:white">Weekday times</h3></ion-col>
                     
                   </ion-row>
       
@@ -49,18 +49,17 @@
                       <ion-col col-6  (click)="updateWeekdayOpen()" >
                       <ion-col col-3><strong>{{currentCarwash?.weekdayOpen}}</strong></ion-col>
                     
-                      <ion-icon name="ios-create"></ion-icon>
-                      Edit
+                      <button  outline ion-button>Edit</button>
                     </ion-col>
                       <ion-col col-6>Close:</ion-col>
                       <ion-col col-6 (click)="updateweekdayClose()" >
                       <ion-col col-3><strong>{{currentCarwash?.weekdayClose}}</strong></ion-col>
-                      <ion-icon name="ios-create"></ion-icon>
-                      Edit
+                      <button  outline ion-button>Edit</button>
+                      
                      
                     </ion-col>
                      
-                      <ion-col col-6><h3>Saturday times</h3></ion-col>
+                      <ion-col col-6><h3 style="color:white">Saturday times</h3></ion-col>
       
                   </ion-row>
                   <ion-row>
@@ -68,21 +67,19 @@
                       <ion-col col-6> Open:</ion-col>
                       <ion-col col-6 (click)=" updatesaturdayOpen()" >
                       <ion-col col-3><strong>{{currentCarwash?.saturdayOpen}}</strong></ion-col>
-                      <ion-icon name="ios-create"></ion-icon>
-                      Edit
+                      <button  outline ion-button>Edit</button>
                       
                     </ion-col>
                       
                       <ion-col col-6>Close:</ion-col>
                       <ion-col col-6 (click)="updatesaturdayClose()">
                       <ion-col col-3><strong>{{currentCarwash?.saturdayClose}}</strong></ion-col>
-                      <ion-icon name="ios-create"></ion-icon>
-                      Edit
+                      <button  outline ion-button>Edit</button>
                       
                       
                       </ion-col>
       
-                      <ion-col col-6><h3>Sunday times</h3></ion-col>
+                      <ion-col col-6><h3 style="color:white" >Sunday times</h3></ion-col>
       
                   </ion-row>
                   <ion-row>
@@ -90,8 +87,7 @@
                       <ion-col col-6> Open:</ion-col>
                       <ion-col col-6 (click)="updatesundayOpen()">
                       <ion-col col-3><strong>{{currentCarwash?.sundayOpen}}</strong></ion-col>
-                      <ion-icon name="ios-create"></ion-icon>
-                          Edit
+                      <button  outline ion-button>Edit</button>
                           
                       </ion-col>
                      
@@ -99,8 +95,7 @@
                       <ion-col col-6>Close:</ion-col>
                       <ion-col col-6 (click)=" updatesundayClose()">
                       <ion-col col-3><strong>{{currentCarwash?.sundayClose}}</strong></ion-col>
-                      <ion-icon name="ios-create"></ion-icon>
-                          Edit
+                      <button  outline ion-button>Edit</button>
                           
                           
                         </ion-col>
@@ -121,16 +116,14 @@
                           <ion-col col-6>Entainment available:</ion-col>
                           <ion-col col-6 (click)=" updateentertainmentAvailable()">
                           <ion-col col-3><strong>{{currentCarwash?.entertainmentAvailable}}</strong></ion-col>
-                          <ion-icon name="ios-create"></ion-icon>
-                          Edit
+                          <button  outline ion-button>Edit</button>
                           
                           </ion-col>
                           
                           <ion-col col-6> NearBy area of Entertainment:</ion-col>
                           <ion-col col-6 (click)="updatetypeOfArea()">
                           <ion-col col-3><strong>{{currentCarwash?.typeOfArea}}</strong></ion-col>
-                          <ion-icon name="ios-create"></ion-icon>
-                          Edit
+                          <button  outline ion-button>Edit</button>
                               
                           </ion-col>
                         </ion-row>
@@ -139,24 +132,21 @@
                           <ion-col col-6>Number of sedans:</ion-col>
                           <ion-col col-6 (click)=" updatesedanCars()">
                           <ion-col col-3><strong>{{currentCarwash?.sedanCars}}</strong></ion-col>
-                          <ion-icon name="ios-create"></ion-icon>
-                          Edit
+                          <button  outline ion-button>Edit</button>
                           
                           </ion-col>
                           
                           <ion-col col-6>Number of van:</ion-col>
                           <ion-col col-6 (click)=" updatevanCars()">
                           <ion-col col-3><strong>{{currentCarwash?.vanCars}}</strong></ion-col>
-                          <ion-icon name="ios-create"></ion-icon>
-                              Edit
+                          <button  outline ion-button>Edit</button>
                           
                           </ion-col>
                          
                           <ion-col col-6>Number of truck:</ion-col>
                           <ion-col col-6 (click)=" updatetruckCars()">
                           <ion-col col-3><strong>{{currentCarwash?.truckCars}}</strong></ion-col>
-                          <ion-icon name="ios-create"></ion-icon>
-                              Edit
+                          <button  outline ion-button>Edit</button>
                               
                               
                             </ion-col>
@@ -166,17 +156,14 @@
                           <ion-col col-6>Number of males:</ion-col>
                           <ion-col col-6 (click)="updatemales()">
                           <ion-col col-3><strong>{{currentCarwash?.males}}</strong></ion-col>
-                          <ion-icon name="ios-create"></ion-icon>
-                              Edit
-                          
+                          <button  outline ion-button>Edit</button>
                         </ion-col>
                           
                           
                           <ion-col col-6>Number of females:</ion-col>
                           <ion-col col-6  (click)="updatefemales()">
                           <ion-col col-3><strong>{{currentCarwash?.females}}</strong></ion-col>
-                          <ion-icon name="ios-create"></ion-icon>
-                              Edit
+                          <button  outline ion-button>Edit</button>
                           
                         </ion-col>
                         </ion-row>
