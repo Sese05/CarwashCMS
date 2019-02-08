@@ -147,12 +147,15 @@ updateInfoWeekOpen(weekdayOpen:string):Promise<any>{
   name:'weekdayClose',
   type: 'radio',
   label: '20:00pm',
-  value:'20:00'
+  value:'20:00',
+  checked:true
+
 },{
   name:'weekdayClose',
   type: 'radio',
   label: '21:00pm',
   value:'21:00'
+  
 }
 ],
 buttons:[{
@@ -191,7 +194,8 @@ updateInfoWeekClose(weekdayClose:string):Promise<any>{
   name:'saturdayOpen',
   type: 'radio',
   label: '9:00am',
-  value:'09:00'
+  value:'09:00',
+  checked:true
 },{
   name:'saturdayOpen',
   type: 'radio',
@@ -249,7 +253,8 @@ updateInfosaturdayOpen(saturdayOpen:string):Promise<any>{
   name:'saturdayClose',
   type: 'radio',
   label: '21:00pm',
-  value:'21:00'
+  value:'21:00',
+  checked:true
 }
 ],
 buttons:[{
@@ -292,7 +297,8 @@ updateInfoSaturdayClose(saturdayClose:string):Promise<any>{
   name:'sundayOpen',
   type: 'radio',
   label: '10:00am',
-  value:'10:00'
+  value:'10:00',
+  checked:true
 },{
   name:'sundayOpen',
   type: 'radio',
@@ -418,6 +424,7 @@ updateInfoentertainmentAvailable(entertainmentAvailable:string):Promise<any>{
      inputs:[{
        name:'typeOfArea',
        placeholder:'area type',
+       
     
   }],
   buttons:[{
@@ -449,7 +456,7 @@ updateInfoentertainmentAvailable(entertainmentAvailable:string):Promise<any>{
    inputs:[{
      name:'sedanCars',
      placeholder:'number of sedanCars',
-  
+    
 }],
 buttons:[{
   text:'cancel',
@@ -479,7 +486,7 @@ updateInfoSedans(sedanCars:string):Promise<any>{
    inputs:[{
      name:'vanCars',
      placeholder:'number of vanCars',
-  
+     
 }],
 buttons:[{
   text:'cancel',
@@ -509,7 +516,7 @@ updateInfovanCars(vanCars:string):Promise<any>{
    inputs:[{
      name:'truckCars',
      placeholder:'number of truck cars',
-  
+     
 }],
 buttons:[{
   text:'cancel',
@@ -539,7 +546,7 @@ updateInfotruckCars(truckCars:string):Promise<any>{
    inputs:[{
      name:'males',
      placeholder:'employee males',
-  
+     
 }],
 buttons:[{
   text:'cancel',
@@ -569,6 +576,7 @@ updateInfomales(males:string):Promise<any>{
    inputs:[{
      name:'females',
      placeholder:'employee females',
+   
   
 }],
 buttons:[{
