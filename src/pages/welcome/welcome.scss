@@ -17,8 +17,8 @@ page-welcome {
        
       }
       .odd {
-        background-color:  rgba(0.0,0.0,0.0,0.3);
-    
+        background-color:grey;
+      
     }
     .even {
         background-color: lightgrey;
@@ -26,19 +26,19 @@ page-welcome {
 
           
     .header .col {
-        background-color:burlywood;
+        background-color:#f9a828;
     }
 
 
     
-    //  .col {
-    //     // border: solid 1px grey;
-    //    border-bottom-style: none;
-    //  border-right-style: none;
-    //     text-align: right;
-    //  //  position: relative;
-        
-    // }
+     .col {
+     //border: solid 1px grey;
+       border-bottom-style: none;
+     border-right-style: none;
+        text-align: right;
+      //position: relative;
+    
+    }
 
     .row{
         color:black;

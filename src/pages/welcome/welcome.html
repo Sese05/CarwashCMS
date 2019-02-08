@@ -3,8 +3,12 @@
     <div class="col">
        
 
-    <button ion-button clear (click)="map()">View maps</button>
-    <button ion-button clear (click)="logOut()">LogOut</button>
+    <button ion-button clear style="color:black" (click)="map()">
+        
+      View maps</button>
+    <button ion-button clear style="color:black" (click)="logOut()">
+       LogOut
+    </button>
    
     
     
@@ -21,7 +25,7 @@
   <!-- <div class="container"> -->
     
     
-<h1 style="color:orange">The carwash list</h1>
+<h1 style="color:black">The carwash information</h1>
     <!-- <!-- We are creating an item that will repeat itself for every event we have in our database.
  We are showing necessary event data like the name, the ticket price for guests and the event date.
  
@@ -64,7 +68,7 @@
     [class.odd]="isOdd" 
     [class.even]="isEven"  >
 
-      <ion-col col-2 color="odd ? 'grey' : 'yellow'" >
+      <ion-col col-2  >
           {{carwash?.carwashName}}
       </ion-col>
   
