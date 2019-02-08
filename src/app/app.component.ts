@@ -1,3 +1,4 @@
+import { SigninPage } from './../pages/signin/signin';
 
 import { WelcomePage } from './../pages/welcome/welcome';
 import { HomePage } from './../pages/home/home';
@@ -24,7 +25,7 @@ const config =({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage : any=WelcomePage;
+   rootPage : any;
   
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
@@ -36,15 +37,15 @@ export class MyApp {
     });
     firebase.initializeApp(config)
     console.log(config)
-    // const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-    //   if (!user) {
-    //     this.rootPage =WelcomePage;
-    //     unsubscribe();
-    //   } else {
-    //     this.rootPage =WelcomePage;
-    //     unsubscribe();
-    //   }
-    // });
+    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      if (!user) {
+        this.rootPage =SigninPage;
+        unsubscribe();
+      } else {
+        this.rootPage =WelcomePage;
+        unsubscribe();
+      }
+    });
   }
 }
 
