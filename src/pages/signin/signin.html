@@ -5,57 +5,54 @@
         
       </div>
       <div class="app-name">
-       <h1 style="color:yellow"> Data Watch</h1>
-          
+        <h2>Data Watch
+        </h2>
       </div>
     </div>
   
 
 
 <form [formGroup]="loginForm"  class="form-holder" (submit)="loginUser()" novalidate>
-<div class="car" style="text-align:center" padding>
-    <ion-label style="color:yellow">Email:</ion-label>
-    <input placeholder="Enter Email" formControlName="email" type="email" 
+  <ion-item class="items">
+    <ion-label floating><ion-icon name="mail"></ion-icon>Email</ion-label>
+    <ion-input formControlName="email" type="email" 
     [class.invalid]="!loginForm.controls.email.valid && blur">
-  
-
-
- 
+    </ion-input>
+  </ion-item>
   <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid &&
    loginForm.controls.email.touched">
     <p ion-text color="danger">*Please enter a valid email address.</p>
   </ion-item>
 
- 
-    <ion-label style="color:yellow">Password:</ion-label>
-    <input placeholder="Enter Password" formControlName="password" type="password" 
+  <ion-item class="items">
+    <ion-label floating><ion-icon name="lock"></ion-icon>Password</ion-label>
+    <ion-input formControlName="password" type="password" 
     [class.invalid]="!loginForm.controls.password.valid && blur">
-  
-  
-
-  
+    </ion-input>
+  </ion-item>
   <ion-item  class="error-message" *ngIf="!loginForm.controls.password.valid 
   && loginForm.controls.password.touched">
     <p  ion-text color="danger">Your password needs more than 6 characters.</p>
   </ion-item>
-  <br>
 
-  <button class="btn" ion-button type="submit" [disabled]="!loginForm.valid">
-    Sign in
+
+
+
+  <button ion-button block color="primary" type="submit" [disabled]="!loginForm.valid">
+    LogIn
   </button>
 
 
 
 <div  style="text-align:center" padding>
-  <p style="color:white">Forgot Password click here<a style="color:yellow" (click)="goToResetPassword()">Reset</a></p>
-   <!-- <p style="color:white" class="p">Don't have an account click here<a style="color:yellow"(click)="goToSignup()">Create new account</a></p> -->
+  <p style="color:white">Forgot Password? <a style="color:#f9a828" (click)="goToResetPassword()">Reset</a></p>
+ 
   <br>
 
 </div>
 
-</div>
-  
-  
+
+
 
 </form>
 </div>
