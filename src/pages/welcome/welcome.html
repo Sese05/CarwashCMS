@@ -19,64 +19,86 @@
   
  
 
-  <div class="container">
+  <!-- <div class="container"> -->
     
     
-<h1 style="color:yellow">The carwash list</h1>
-    <!-- We are creating an item that will repeat itself for every event we have in our database.
+<h1 style="color:orange">The carwash list</h1>
+    <!-- <!-- We are creating an item that will repeat itself for every event we have in our database.
  We are showing necessary event data like the name, the ticket price for guests and the event date.
  
  When users tap on the event, they are going to be taken to the event’s detail page.
  
  We are sending the event id in the goToEventDetail() function so we can pull the specific ID from Firebase. -->
-<div class="car">
+
+
+
+
+<ion-grid>
+
+
+  <ion-row class="row header">
+      <ion-col col-2 >
+        <div class="col">Car washes</div>
+        </ion-col>
+    <ion-col col-2>
+      <div class="col">Loc lat:</div>
+    </ion-col>
+    <ion-col col-2>
+      <div class="col">Loc long:</div>
+    </ion-col>
+    <ion-col col-2 >
+      <div class="col">Weekday Open:</div>
+    </ion-col>
+    <ion-col col-2>
+      <div class="col">Weekday closes:</div>
+    </ion-col>
+    <ion-col col-2>
+        <div class="col"></div>
+      </ion-col>
+  </ion-row>
+
+
+    <ion-row class="car" id="grid" *ngFor="let carwash of carwashList;
+    let index =index;
+    let isOdd=odd;
+    let isEven=even"
+    [class.odd]="isOdd" 
+    [class.even]="isEven"  >
+
+      <ion-col col-2 color="odd ? 'grey' : 'yellow'" >
+          {{carwash?.carwashName}}
+      </ion-col>
   
- <ion-list no-lines>
+      <ion-col col-2 >
+          {{carwash?.carwashLatitude}}
+      </ion-col>
 
-    
+      <ion-col col-2 >
+          {{carwash?.carwashLongatude}}
+      </ion-col>
 
-              <ion-item no-lines class="car" *ngFor="let carwash of carwashList; let i =index;" >
-              <div class="row header">
-                <div class="col">Car washes</div>
-                <div class="col">Loc lat:</div>
-                <div class="col">Loc long:</div>
-                <div class="col">Weekday opens:</div>
-                <div class="col">Weekday closes:</div>
-                <div class="col"></div>
-                
-              </div>
-              <div class="row" ng-repeat="data in ctrl.data">
-                <div style="color:white" class="col">{{carwash?.carwashName}}</div>
-                <div style="color:white" class="col">{{carwash?.carwashLatitude}}</div>
-                <div style="color:white" class="col">{{carwash?.carwashLongatude}}</div>
-                <div style="color:white" class="col">{{carwash?.weekdayOpen}}</div>
-                <div style="color:white" class="col">{{carwash?.weekdayClose}}</div>
-              
-                <div class="col">
-                    <button ion-button color="primary" icon-left (click)="goToCarwashDetail(carwash.id)">
-                        <ion-icon name="ios-create"></ion-icon>
-                        Edit
-                      </button>
-                <button ion-button color="danger" icon-left (click)="deleteInformation(carwash.id)">
-                  <ion-icon name="ios-trash"></ion-icon>
-                  Delete
-                </button>
-                </div>
-              </div>
-           
+      <ion-col col-2 >
+          {{carwash?.weekdayOpen}}
+      </ion-col>
       
-            
-       
-                    
+      <ion-col col-2>
+          {{carwash?.weekdayClose}}
+      </ion-col>
+
+      
+      <div class="col"  >
+        <button ion-button outline  icon-left (click)="goToCarwashDetail(carwash.id)">
+            <ion-icon name="ios-create"></ion-icon>
+            Edit
+          </button>
+    <button ion-button outline  color="danger" icon-left (click)="deleteInformation(carwash.id)">
+      <ion-icon name="ios-trash"></ion-icon>
+      Delete
+    </button>
+    </div>
   
-
-      </ion-item>
-
-  </ion-list>
-</div>
-</div>
-
-
-
+    </ion-row>
+    
+  </ion-grid>
   
 </ion-content>

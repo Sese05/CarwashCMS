@@ -135,22 +135,17 @@ loadmap(){
         let markerGroup = leaflet.featureGroup();
         let marker: any = leaflet.marker([coordinates[0].latitude, coordinates[0].longitude]).on('click', () => {
           alert('Marker clicked');
-
-  
-
     })
 
       markerGroup.addLayer(marker);
       this.map.addLayer(markerGroup);
     
      this.populateMap("latitude", "longitude");
-
    })
       
   .catch((error: any) => console.log(error));
 }
 
-  
   getAllCoordinates(){
 
     //Now we need to get that list of co ordinates from Firebase
