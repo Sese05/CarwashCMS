@@ -11,6 +11,7 @@ import {
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from "../../providers/auth/auth";
 import { WelcomePage } from '../welcome/welcome';
+import { ResetPage } from '../reset/reset';
  
 
 @IonicPage()
@@ -51,7 +52,7 @@ goToSignup():void {
   }
   
   goToResetPassword():void {
-    this.navCtrl.push(WelcomePage);
+    this.navCtrl.push(ResetPage);
   }
 
   loginUser(): void {

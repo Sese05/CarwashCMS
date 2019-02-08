@@ -19,6 +19,7 @@ import * as firebase from 'firebase';
 import { AuthProvider } from '../providers/auth/auth';
 import { SignupPage } from '../pages/signup/signup';
 import { SigninPage } from '../pages/signin/signin';
+import { ResetPage } from '../pages/reset/reset';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SigninPage } from '../pages/signin/signin';
     WelcomePage,
     CarwashlistDetailsPage,
     SignupPage,
-    SigninPage
+    SigninPage,
+    ResetPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { SigninPage } from '../pages/signin/signin';
     WelcomePage,
     CarwashlistDetailsPage,
     SignupPage,
-    SigninPage
+    SigninPage,
+    ResetPage
   ],
   providers: [
     StatusBar,
